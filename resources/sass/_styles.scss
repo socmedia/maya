@@ -4,7 +4,6 @@ body {
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     color: $dark;
-    background-color: $bg-color;
     font-weight: 400;
     width: 100vw;
     height: 100vh;
@@ -121,21 +120,20 @@ hr {
     }
 }
 
-#menu.navbar-default {
+.navbar-expand-lg {
     background-color: rgba(248, 248, 248, 0);
     border-color: rgba(231, 231, 231, 0);
 
     .navbar-nav {
-        > li {
-            > a {
+        >li {
+            >a {
                 text-transform: uppercase;
                 color: #ddd;
                 font-size: 15px;
-                font-weight: 400;
+                font-weight: 500;
                 letter-spacing: 1px;
-                padding: 8px 2px;
+                padding: 0 1rem !important;
                 border-radius: 0;
-                margin: 9px 20px 0 20px;
 
                 &:hover {
                     color: $company-color;
@@ -152,8 +150,8 @@ hr {
 
 .navbar-default {
     .navbar-nav {
-        > .active {
-            > a {
+        >.active {
+            >a {
                 color: $company-color !important;
                 background-color: transparent;
 
@@ -175,7 +173,7 @@ hr {
             background-color: #fff;
             border-color: #fff;
 
-            > .icon-bar {
+            >.icon-bar {
                 background-color: $company-color;
             }
         }
@@ -292,11 +290,9 @@ hr {
     background-size: cover;
 
     .overlay {
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(112, 173, 71, 0.4) 100%
-        );
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(112, 173, 71, 0.4) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#6670ad47', GradientType=0);
     }
 
@@ -331,10 +327,15 @@ hr {
 }
 
 header {
-    .intro-text {
-        padding-top: 320px;
-        padding-bottom: 200px;
-        text-align: center;
+    margin-top: 130px;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 85px;
+    }
+
+    img {
+        width: 100vw;
     }
 }
 
@@ -440,7 +441,7 @@ header {
         opacity: 0;
         transition: all 0.5s;
 
-        > h4 {
+        >h4 {
             opacity: 0;
             color: #fff;
             transform: translateY(100%);
@@ -454,7 +455,7 @@ header {
 
     &:hover {
         .hover-text {
-            > h4 {
+            >h4 {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -505,6 +506,46 @@ header {
             }
         }
     }
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        height: 20px;
+        width: 20px;
+        border-radius: 50% !important;
+        background: #fae9dd80 !important;
+        color: #6b655b !important;
+        font-size: 17px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+
+        @include media-breakpoint-up(md) {
+            height: 30px;
+            width: 30px;
+        }
+
+        span {
+            @include media-breakpoint-up(md) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.owl-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #contact {
@@ -645,4 +686,16 @@ label {
 
 textarea {
     resize: none;
+}
+
+button,
+input,
+textarea {
+
+    &:focus,
+    &:active,
+    &:hover {
+        box-shadow: none !important;
+        outline: none !important;
+    }
 }

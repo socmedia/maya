@@ -1,9 +1,11 @@
 <div id="contact" class="text-center">
     <div class="container">
         <div class="section-title text-center">
-            <h2>Contact Us</h2>
+            <h2>Hubungi Kami</h2>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+            <p>
+                Anda bisa menghubungi kami atau bertemu dengan kami melalui kontak yang kami lampirkan dibawah.
+            </p>
         </div>
         <div class="row">
             <div class="col-12 m-auto contact-info text-left">

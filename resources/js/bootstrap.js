@@ -10,7 +10,5 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
     require('bootstrap');
-    window.owlCarousel = require('owl.carousel');
-    require('owl.carousel/dist/assets/owl.carousel.min.css');
     window.feather = require('feather-icons');
 } catch (e) {}

@@ -1,20 +1,13 @@
 <header id="header">
-    <div class="intro">
-        <div class="overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 intro-text m-auto">
-                        <h1>Maya Spring Bed</h1>
-                        <p>
-                            Maya Spring Bed menghadirkan kasur terbaik dengan teknologi paling mutakhir dari Italia
-                            dan Jerman yang
-                            akan membuat Anda sekeluarga menikmati tidur yang sempurna guna menyongsong hari-hari
-                            yang menyenangkan.
-                        </p>
-                        <a href="#about" class="btn btn-custom btn-lg page-scroll">More Info</a>
-                    </div>
-                </div>
-            </div>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="{{asset('img/banner/1.webp')}}" alt="">
+        </div>
+        <div class="item">
+            <img src="{{asset('img/banner/2.webp')}}" alt="">
+        </div>
+        <div class="item">
+            <img src="{{asset('img/banner/3.webp')}}" alt="">
         </div>
     </div>
 </header>

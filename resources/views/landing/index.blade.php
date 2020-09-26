@@ -7,7 +7,8 @@
 
 <x-about />
 
-<x-services />
+{{-- <x-services /> --}}
+<x-product />
 
 <x-contact />
 @endsection

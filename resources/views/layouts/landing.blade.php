@@ -35,13 +35,26 @@
                 $('.navbar').addClass('scrolled') :
                 $('.navbar').removeClass('scrolled');
         })
-        $('.owl-carousel').owlCarousel({
+        $('.banner').owlCarousel({
             loop:true,
             nav:true,
             dots: true,
             lazyLoad: true,
             items: 1
         })
+        $('.product').owlCarousel({
+            loop:true,
+            nav:true,
+            dots: true,
+            lazyLoad: true,
+            items: 3,
+        })
+
+        const array = [1, 1, 2, 3, 5, 5, 1]
+        const uniqueArray = [...new Set(array)];
+        console.log(uniqueArray);
+
+
     </script>
 </body>
 

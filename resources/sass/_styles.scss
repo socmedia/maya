@@ -699,3 +699,41 @@ textarea {
         outline: none !important;
     }
 }
+
+
+.product__card {
+    margin: 1rem;
+    padding: .7rem;
+    position: relative;
+    background: $bg-color;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px #30303025;
+
+    .product__image {
+        text-align: center;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    .product__info {
+        .product__name {
+            color: $dark;
+            font-size: 1.6rem;
+        }
+
+        .product__description {
+            opacity: 0;
+            display: none;
+            transition: .5s all cubic-bezier(0.23, 1, 0.320, 1);
+        }
+    }
+
+    &:hover {
+        .product__info .product__description {
+            opacity: 1;
+            display: block;
+        }
+    }
+}

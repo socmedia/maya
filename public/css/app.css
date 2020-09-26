@@ -11555,3 +11555,36 @@ textarea:hover {
   outline: none !important;
 }
 
+.product__card {
+  margin: 1rem;
+  padding: 0.7rem;
+  position: relative;
+  background: #FAE9DD;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px #30303025;
+}
+
+.product__card .product__image {
+  text-align: center;
+}
+
+.product__card .product__image img {
+  width: 80%;
+}
+
+.product__card .product__info .product__name {
+  color: #222222;
+  font-size: 1.6rem;
+}
+
+.product__card .product__info .product__description {
+  opacity: 0;
+  display: none;
+  transition: 0.5s all cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.product__card:hover .product__info .product__description {
+  opacity: 1;
+  display: block;
+}
+

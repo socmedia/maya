@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <div class="about-media"> <img src="{{asset('img/7-support.jpg')}}" alt=""></div>
+                <div class="about-media"> <img src="{{asset('img/7support.png')}}" alt="7 Support Zones"></div>
             </div>
         </div>
     </div>

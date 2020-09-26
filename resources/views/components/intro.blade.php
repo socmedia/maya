@@ -1,5 +1,5 @@
 <header id="header">
-    <div class="owl-carousel owl-theme">
+    <div class="banner owl-carousel owl-theme">
         <div class="item">
             <img src="{{asset('img/banner/1.webp')}}" alt="">
         </div>

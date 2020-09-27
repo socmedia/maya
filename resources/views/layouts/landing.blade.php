@@ -26,6 +26,7 @@
     <script type="text/javascript" src="{{asset('js/jquery.isotope.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/nivo-lightbox.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/gsap/minified/gsap.min.js')}}"></script>
 
     @stack('scripts')
     <script>
@@ -50,10 +51,35 @@
             items: 3,
         })
 
-        const array = [1, 1, 2, 3, 5, 5, 1]
-        const uniqueArray = [...new Set(array)];
-        console.log(uniqueArray);
+        $('[show-modal]').click(function () {
+            $('#modal-description').modal('show')
+            const slug = $(this).data('slug');
+            $.ajax({
+                url: `/api/product/${slug}`,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                method: 'GET',
+                success:function(data) {
+                    console.log(data)
+                    $('#modal-description').find('.modal-title').html(slug);
+                    $('#modal-description').find('.product-info').html(`
+                        <p>Deskripsi:</p>
+                        <p>${data.description}</p>
+                        <p>Kenyamanan : ${data.comfort}</p>
+                        <p>Warna: ${data.color}</p>
+                        <p>Tinggi: ${data.height}</p>
+                        <p>Garansi: ${data.guarantee}</p>
+                        <p>Ukuran: </p>
+                    `);
+                },
+                error: function (err){
+                    console.error(err.responseJSON.message)
+                }
+            })
 
+            gsap.fromTo(".modal-dialog", {y: -50}, {y: 0, duration: .3, ease: "ease.power1"});
+        })
 
     </script>
 </body>

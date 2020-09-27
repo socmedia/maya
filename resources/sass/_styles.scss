@@ -700,12 +700,21 @@ textarea {
     }
 }
 
+.header-text {
+    span {
+        color: $company-color;
+    }
+}
+
+#product {
+    padding: 8em 0;
+}
 
 .product__card {
     margin: 1rem;
-    padding: .7rem;
+    padding: 1rem .7rem;
     position: relative;
-    background: $bg-color;
+    // background: $bg-color;
     border-radius: 8px;
     box-shadow: 0 5px 10px #30303025;
 
@@ -719,8 +728,38 @@ textarea {
 
     .product__info {
         .product__name {
+            position: relative;
             color: $dark;
             font-size: 1.6rem;
+            margin: 10px;
+
+            span {
+                position: relative;
+                z-index: 2;
+                margin-left: 15px;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 70%;
+            }
+
+            &:before {
+                background-color: $company-color;
+                top: 2px;
+                left: 0;
+                z-index: 1;
+            }
+
+            &:after {
+                background-color: $dark;
+                top: -3px;
+                left: -3px;
+                z-index: 0;
+            }
         }
 
         .product__description {
@@ -736,4 +775,9 @@ textarea {
             display: block;
         }
     }
+}
+
+
+.modal {
+    // .modal-product
 }

@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+@import "./breakpoints";
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fae9dd;
+    overflow: hidden;
+}
+
+.logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    @include breakpoint-up(medium) {
+        right: 10vmin;
+    }
+
+    img {
+        height: 55px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vmin;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include breakpoint-up(medium) {
+        padding: 10vmin;
+    }
+
+    img {
+        width: 80vmin;
+
+        &.mobile {
+            @include breakpoint-up(large) {
+                display: none;
+            }
+        }
+
+        &.desktop {
+            @include breakpoint-down(medium) {
+                display: none;
+            }
+        }
+
+        @include breakpoint-up(medium) {
+            height: 100%;
+            width: auto;
+        }
+    }
+}

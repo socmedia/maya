@@ -1,5 +1,8 @@
 <?php
 
+use App\Mail\ContactUsMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +23,7 @@ Route::get('/', function () {
 Route::get('/demo', function () {
     return view('landing.index');
 });
+
+Route::post('/contact-us', function (Request $request) {
+    return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->send(new ContactUsMail($request->all()));
+})->name('send.contactUs');

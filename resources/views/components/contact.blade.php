@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-12 col-md-6 col-md-offset-2 m-auto">
                         <h3>Tinggalkan Pesan Untuk Kami</h3>
-                        <form action="" method="post">
+                        <form action="{{route('send.contactUs')}}" method="post">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">

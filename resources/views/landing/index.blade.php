@@ -7,7 +7,6 @@
 
 <x-about />
 
-{{-- <x-services /> --}}
 <x-product />
 
 <x-contact />

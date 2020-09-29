@@ -97,7 +97,16 @@ trait Product
                 ],
                 'description' => 'Prestige memiliki pillow top setinggi 7 cm dan menjadikan tidur anda nyaman serta berkualitas. Menggunakan High Density Foam serta textile knitting yang lembut dan nyaman. Prestige mempunyai warna putih yang kombinasikan dengan warna grey sehingga menjadikan semakin terlihat mewah.',
             ],
-            'elegance-2' => null,
+            'elegance-2' => [
+                'comfort' => 'medium firm',
+                'color' => 'Biru, Coklat dan Merah',
+                'height' => '35cm',
+                'guarantee' => '25 Tahun',
+                'size' => [
+                    '120 x 200 cm',
+                ],
+                'description' => 'Fitur Maya Springbed Elegance 2 in 1 menggunakan Busa Kepadatan Tinggi, M-Guard, Kain Knitting & medium Firm.',
+            ]
         ];
 
         if ($productName) {

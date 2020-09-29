@@ -46,15 +46,16 @@
             method: 'GET',
             success: function (data) {
                 let li = '';
-                const host = document.location.host;
                 data.size.map(function (v) {
                     return li += `<li>${v}</li>`;
                 })
+                $('[modal-body-loader]').hide();
+                $('[modal-body-real]').removeClass('d-none').fadeIn();
                 $('#modal-description').find('img').attr('src', `/img/detail/${slug}.png`);
                 $('#modal-description').find('#comfort').html(data.comfort);
                 $('#modal-description').find('#color').html(data.color);
                 $('#modal-description').find('#height').html(data.height);
-                $('#modal-description').find('#size').html(`<ol>${li}</ol>`);
+                $('#modal-description').find('#size').html(`<ol class="m-0">${li}</ol>`);
                 $('#modal-description').find('#guarantee').html(data.guarantee);
                 $('#modal-description').find('#description').html(data.description);
             },
@@ -81,6 +82,11 @@
             $('.page').removeClass('active');
             $(this).addClass('active');
         })
+    })
+
+    $('#modal-description').on('hidden.bs.modal', function (e) {
+        $('[modal-body-loader]').show();
+        $('[modal-body-real]').addClass('d-none');
     })
 
 }());

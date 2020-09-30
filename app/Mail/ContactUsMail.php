@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -31,12 +30,12 @@ class ContactUsMail extends Mailable
     public function build()
     {
         return $this->view('emails.contact-us')
-            ->subject('[contact-us]' . $this->request['subject'])
+            ->subject('[contact-us] ' . $this->request['subject'])
             ->with([
                 'name' => $this->request['name'],
                 'email' => $this->request['email'],
                 'subject' => $this->request['subject'],
-                'message' => 'jasndansdk',
+                'pesan' =>  $this->request['message'],
             ]);
     }
 }

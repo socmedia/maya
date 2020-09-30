@@ -24,6 +24,10 @@ Route::get('/demo', function () {
     return view('landing.index');
 });
 
-Route::post('/contact-us', function (Request $request) {
+Route::post('/hubungi-kami', function (Request $request) {
     return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->queue(new ContactUsMail($request->all()));
 })->name('send.contactUs');
+
+Route::get('/hubungi-kami', function () {
+    return view('emails.contact-us');
+})->name('contactUs');

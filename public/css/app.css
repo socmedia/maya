@@ -11566,7 +11566,7 @@ textarea:hover {
   border-radius: 2px;
   background: #E5E5E5;
   left: 50%;
-  top: 73%;
+  top: calc(100% - 90px);
   transform: rotate(45deg) translateX(-50%);
 }
 
@@ -11732,6 +11732,26 @@ textarea:hover {
 
 @media (min-width: 768px) {
   .float-button {
+    right: 50px;
+  }
+}
+
+.comment {
+  position: fixed;
+  right: 20px;
+  background: ghostwhite;
+  bottom: 70px;
+  z-index: 1000;
+  width: 143px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00000027;
+  padding: 6px;
+  text-align: right;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .comment {
     right: 50px;
   }
 }

@@ -18,12 +18,17 @@
                 </ul>
             </div>
             <p class="text-center">
-                Copyright &copy; 2020. <b>Maya Spring Bed</b>
+                Copyright &copy; 2020. <a href="https://mayaspringbed.id"><b>Maya Spring Bed</b></a>. All rights
+                reserved.
             </p>
         </div>
     </div>
 </div>
 
+<div class="comment">
+    Beli produk kami
+    melalui Whatsapp di bawah
+</div>
 <div class="float-button">
     <a href="https://api.whatsapp.com/send?phone=+6285876771888&text=Saya ingin bertanya seputar produk maya"
         target="_blank" class="btn btn-wa btn-primary">

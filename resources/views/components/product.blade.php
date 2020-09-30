@@ -2,7 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 mb-5">
-                <h2 class="header-text">Semua <span>Produk</span></h2>
+                <div class="section-title text-center">
+                    <h2 class="header-text" data-aos="fade-up" data-aos-duration="500">Semua <span>Produk</span></h2>
+                    <hr>
+                </div>
             </div>
             <div class="col-12 col-md-4">
                 <div class="product__card">

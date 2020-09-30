@@ -72,6 +72,14 @@
             duration: .3,
             ease: "ease.power1"
         });
+
+        gsap.fromTo("h2", {
+            y: 50
+        }, {
+            y: 0,
+            duration: .3,
+            ease: "ease.power1"
+        });
     })
 
     $(document).ready(function () {
@@ -88,6 +96,7 @@
     $('#modal-description').on('hidden.bs.modal', function (e) {
         $('[modal-body-loader]').show();
         $('[modal-body-real]').addClass('d-none');
+        $('#modal-description').find('img').attr('src', '');
     })
 
 }());

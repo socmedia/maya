@@ -1,7 +1,7 @@
 <div id="contact" class="text-center">
     <div class="container">
         <div class="section-title text-center">
-            <h2>Hubungi Kami</h2>
+            <h2 class="header-text">Hubungi <span>Kami</span></h2>
             <hr>
             <p>
                 Anda dapat menghubungi kami dengan mengisi form di bawah ini untuk memperoleh informasi lebih lengkap

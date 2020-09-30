@@ -30,12 +30,13 @@ class ContactUsMail extends Mailable
      */
     public function build()
     {
-        $data = [
-            'name' => $this->request['name'],
-            'email' => $this->request['email'],
-            'subject' => $this->request['subject'],
-            'message' => $this->request['message']
-        ];
-        return $this->markdown('emails.contact-us')->with($data);
+        return $this->view('emails.contact-us')
+            ->subject('[contact-us]' . $this->request['subject'])
+            ->with([
+                'name' => $this->request['name'],
+                'email' => $this->request['email'],
+                'subject' => $this->request['subject'],
+                'message' => 'jasndansdk',
+            ]);
     }
 }

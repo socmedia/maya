@@ -10,4 +10,6 @@
 <x-product />
 
 <x-contact />
+
+<form id="cart-form" class="display:none;" target="_blank" method="GET"></form>
 @endsection

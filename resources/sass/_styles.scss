@@ -117,6 +117,10 @@ hr {
 
         img {
             height: 40px;
+
+            @include media-breakpoint-up(md) {
+                height: 55px;
+            }
         }
     }
 
@@ -748,6 +752,9 @@ textarea {
             height: 83px;
             width: 20%;
             border-bottom-right-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 

@@ -25,6 +25,7 @@
         nav: true,
         dots: true,
         lazyLoad: true,
+        autoplay: true,
         items: 1
     })
     $('.product').owlCarousel({

@@ -25,5 +25,5 @@ Route::get('/demo', function () {
 });
 
 Route::post('/contact-us', function (Request $request) {
-    return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->send(new ContactUsMail($request->all()));
+    return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->queue(new ContactUsMail($request->all()));
 })->name('send.contactUs');

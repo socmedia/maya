@@ -11013,6 +11013,12 @@ hr {
   height: 40px;
 }
 
+@media (min-width: 768px) {
+  .navbar a.navbar-brand img {
+    height: 55px;
+  }
+}
+
 .navbar .navbar-nav > .active > a {
   color: #FFA400 !important;
   background-color: transparent;
@@ -11619,6 +11625,9 @@ textarea:hover {
   height: 83px;
   width: 20%;
   border-bottom-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product__card:hover .product__info .product__description {

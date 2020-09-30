@@ -1,7 +1,7 @@
 <div id="about">
     <div class="container">
         <div class="row mb-3 justify-content-center">
-            <div class="col-12 col-md-10 mb-3 mb-md-0">
+            <div class="col-12 mb-3 mb-md-0">
                 <div class="about-text">
                     <h2>Kesempurnaan <span>Jahitan</span></h2>
                     <hr>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="row mb-3 justify-content-center">
-            <div class="col-12 col-md-10 mb-3 mb-md-0">
+            <div class="col-12 mb-3 mb-md-0">
                 <div class="about-text">
                     <h2>Pegas <span>Terbaik</span></h2>
                     <hr>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10 mb-3 mb-md-0">
+            <div class="col-12 mb-3 mb-md-0">
                 <div class="about-text">
                     <h2>7 Support <span>Zones</span></h2>
                     <hr>

@@ -7,7 +7,7 @@
                     <hr>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="product__card">
                     <div class="product__image">
                         <a href="javascript:void(0)" data-slug="elegance" show-modal>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="product__card">
                     <div class="product__image">
                         <a href="javascript:void(0)" data-slug="flipper" show-modal>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="product__card">
                     <div class="product__image">
                         <a href="javascript:void(0)" data-slug="elegance-2" show-modal>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="product__card">
                     <div class="product__image">
                         <a href="javascript:void(0)" data-slug="prestige" show-modal>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="product__card">
                     <div class="product__image">
                         <a href="javascript:void(0)" data-slug="sporty" show-modal>
@@ -147,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4">
                 <div class="product__card">
                     <div class="product__image">
                         <a href="javascript:void(0)" data-slug="crystal" show-modal>

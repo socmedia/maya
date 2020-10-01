@@ -99,4 +99,61 @@
         $('#modal-description').find('img').attr('src', '');
     })
 
+    function checkError(value, message) {
+        if (value === 'name') {
+            $('[name="name"]').addClass('is-invalid').fadeIn();
+            $('[name="name"]').parent().find('p').html(message).fadeIn();
+        }
+
+        if (value === 'email') {
+            $('[name="email"]').addClass('is-invalid').fadeIn();
+            $('[name="email"]').parent().find('p').html(message).fadeIn();
+        }
+
+        if (value === 'subject') {
+            $('[name="subject"]').addClass('is-invalid').fadeIn();
+            $('[name="subject"]').parent().find('p').html(message).fadeIn();
+        }
+
+        if (value === 'message') {
+            $('[name="message"]').addClass('is-invalid').fadeIn();
+            $('[name="message"]').parent().find('p').html(message).fadeIn();
+        }
+    }
+
+    $('.btn-contact').click(function () {
+        const form = new FormData(document.querySelector('#contact-form'));
+        const datas = {
+            name: form.get('name'),
+            email: form.get('email'),
+            subject: form.get('subject'),
+            message: form.get('message'),
+        }
+
+        $('.spinner-border').removeClass('d-none');
+        $('.form-control').removeClass('is-invalid');
+        $('.form-control').parent().find('p').html('');
+
+        $.ajax({
+            url: 'http://127.0.0.1:8000/hubungi-kami',
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: datas,
+            success: function (data) {
+                $('.spinner-border').addClass('d-none');
+                $('.alert-success').fadeIn();
+            },
+            error: function (err) {
+                const errors = err.responseJSON.errors;
+                const obj = Object.entries(errors);
+                $('.spinner-border').addClass('d-none');
+                obj.map((v, i) => {
+                    checkError(v[0], v[1]);
+                })
+            }
+        })
+    })
+
 }());

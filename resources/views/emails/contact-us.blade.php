@@ -24,6 +24,7 @@
             flex-flow: column;
             justify-content: center;
             align-items: center;
+            padding: 7vh 0;
         }
 
         .card {
@@ -42,6 +43,11 @@
 
         .card .card-body {
             padding: 10px
+        }
+
+        .card .card-body p {
+            text-overflow: ellipsis;
+            word-break: break-word;
         }
 
         .footer {
@@ -72,23 +78,23 @@
                 <a href="https://mayaspringbed.id" target="_blank"><img src="{{asset('img/Logo.png')}}" alt="Logo"></a>
             </div>
             <div class="card-body">
-                <h3>Nama : Indra Ranuh</h3>
-                <h3>Email : <a href="mailto:">indraranuh1@gmail.com</a></h3>
-
-                <h3>Pesan:</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quod cum laboriosam beatae quidem,
-                    saepe iste commodi dicta maxime voluptatem molestiae nihil, est amet, non dolore excepturi
-                    voluptates. Deleniti, rem.</p>
-                {{-- <h3>Nama : {{$name}}</h3>
+                <h3>Nama : {{$name}}</h3>
                 <h3>Email : <a href="mailto:{{$email}}">{{$email}}</a></h3>
 
-                <h3># Pesan:</h3>
-                <p>{{$pesan}}</p> --}}
+                <h3>Pesan:</h3>
+                <p>{{$pesan}}</p>
             </div>
         </div>
         <div class="footer">
             &copy; 2020. <a href="https://mayaspringbed.id" target="_blank">Maya Spring Bed</a>. All rights reserved.
         </div>
+
+        <script>
+            setTimeout(() => {
+                const img = document.querySelector('img');
+                img.src = 'https://mayaspringbed.id/img/Logo.png'
+            }, 500);
+        </script>
     </div>
 </body>
 

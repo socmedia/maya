@@ -125,8 +125,12 @@ hr {
     }
 
     .navbar-nav {
-        >.active {
-            >a {
+        .nav-item {
+            padding-right: 15px;
+        }
+
+        > .active {
+            > a {
                 color: $company-color !important;
                 background-color: transparent;
 
@@ -148,7 +152,7 @@ hr {
             background-color: #fff;
             border-color: #fff;
 
-            >.icon-bar {
+            > .icon-bar {
                 background-color: $company-color;
             }
         }
@@ -163,7 +167,6 @@ hr {
         background-color: $white !important;
         box-shadow: $shadow-center;
     }
-
 }
 
 .navbar-toggle {
@@ -174,7 +177,7 @@ hr {
     margin-bottom: 70px;
 
     p {
-        font-size: 18px;
+        font-size: 20px;
         color: #666;
     }
 }
@@ -241,7 +244,6 @@ hr {
     }
 }
 
-
 .btn.active {
     background-image: none;
     outline: 0;
@@ -272,9 +274,11 @@ hr {
     background-size: cover;
 
     .overlay {
-        background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.6) 0%,
-                rgba(112, 173, 71, 0.4) 100%);
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(112, 173, 71, 0.4) 100%
+        );
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#6670ad47', GradientType=0);
     }
 
@@ -377,7 +381,7 @@ header {
 
             p {
                 @include media-breakpoint-up(md) {
-                    font-size: 2.5vmin;
+                    font-size: 20px;
                 }
             }
         }
@@ -397,7 +401,7 @@ header {
         opacity: 0;
         transition: all 0.5s;
 
-        >h4 {
+        > h4 {
             opacity: 0;
             color: #fff;
             transform: translateY(100%);
@@ -411,7 +415,7 @@ header {
 
     &:hover {
         .hover-text {
-            >h4 {
+            > h4 {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -641,7 +645,6 @@ textarea {
 button,
 input,
 textarea {
-
     &:focus,
     &:active,
     &:hover {
@@ -677,22 +680,22 @@ textarea {
     }
 
     &:after {
-        content: '';
+        content: "";
         position: absolute;
         width: 100%;
         height: calc(100% - 83px);
-        background: #E5E5E5;
+        background: #e5e5e5;
         left: 0;
         top: 0;
     }
 
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 23px;
         height: 23px;
         border-radius: 2px;
-        background: #E5E5E5;
+        background: #e5e5e5;
         left: 50%;
         top: calc(100% - 90px);
         transform: rotate(45deg) translateX(-50%);
@@ -720,7 +723,7 @@ textarea {
 
             &:before,
             &:after {
-                content: '';
+                content: "";
                 position: absolute;
                 width: 8px;
                 height: 70%;
@@ -765,7 +768,6 @@ textarea {
         }
     }
 }
-
 
 .modal.modal-product {
     .modal-content {
@@ -815,11 +817,10 @@ textarea {
                 }
 
                 table {
-
                     tr {
                         td {
                             border: none;
-                            padding: .25rem;
+                            padding: 0.25rem;
                             font-size: 12px;
 
                             @include media-breakpoint-up(md) {
@@ -836,7 +837,6 @@ textarea {
         }
     }
 }
-
 
 .float-button {
     position: fixed;
@@ -893,7 +893,10 @@ textarea {
 .btn-contact {
     color: $company-color-hovered;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
     overflow: hidden;
     width: 100%;
     height: 60px;
@@ -910,7 +913,7 @@ textarea {
     }
 
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: -50px;
@@ -932,8 +935,13 @@ textarea {
             transform: translateX(0);
         }
     }
-}
 
+    .spinner-border {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-width: 0.1em;
+    }
+}
 
 .loading {
     width: 48px;
@@ -945,7 +953,7 @@ textarea {
     animation: rotation 1s linear infinite;
 
     &:after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -955,7 +963,16 @@ textarea {
         border-bottom: 4px solid $company-color;
         border-left: 4px solid transparent;
     }
+}
 
+.is-invalid {
+    border-color: #dc3545 !important;
+    padding-right: calc(1.5em + 0.75rem) !important;
+}
+
+.alert-success {
+    color: #fbfbfb;
+    background-color: #00bfa5;
 }
 
 @keyframes rotation {

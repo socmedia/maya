@@ -27,8 +27,13 @@
                     </div>
                     <div class="col-12 col-md-6 col-md-offset-2 m-auto">
                         <h3>Tinggalkan Pesan Untuk Kami</h3>
-                        <form action="{{route('send.contactUs')}}" method="post">
-                            @csrf
+                        <div class="alert alert-success fade show" style="display:none;" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            Email telah dikirim, respon akan kami kirimkan melalui email &#x1F60A;
+                        </div>
+                        <form id="contact-form">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -45,6 +50,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="subject" placeholder="Subjek">
+                                <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
                                 <textarea name="message" name="message" class="form-control" rows="4"
@@ -52,7 +58,10 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div id="success"></div>
-                            <button type="submit" class="btn-contact"><span>Kirim Pesan</span></button>
+                            <button type="button" class="btn-contact">
+                                <span>Kirim Pesan</span>
+                                <div class="spinner-border ml-3 d-none" role="status"></div>
+                            </button>
                         </form>
                     </div>
                 </div>

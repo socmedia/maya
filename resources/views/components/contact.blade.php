@@ -17,7 +17,7 @@
                             width="100%" height="200" frameborder="0" style="border:0;"></iframe>
                     </div>
                     <div class="col-12 col-md-6 mb-3 mb-md-0">
-                        <h3>Alamat</h3>
+                        <h3>Workshop</h3>
                         <div class="contact-item">
                             <p>Indronatan RT 03 RW 03, Ngabean</p>
                             <p>Kec. Kartasura, Kab. Sukoharjo, 57165</p>

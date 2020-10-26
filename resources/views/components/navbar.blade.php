@@ -1,7 +1,7 @@
 <section id="top">
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light navbar-fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="">
                 <img src="{{asset('img/logo.png')}}" alt="Logo">
             </a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"

@@ -23,3 +23,12 @@ Route::get('/', function () {
 Route::post('/hubungi-kami', function (ContactUsRequest $request) {
     return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->queue(new ContactUsMail($request->all()));
 })->name('send.contactUs');
+
+Auth::routes(['verify' => true, 'register' => false]);
+
+Route::group([
+    'prefix' => '__secret',
+    'middleware' => 'verified'
+], function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});

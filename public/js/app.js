@@ -6354,7 +6354,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.carousel.css":
 /*!************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/owl.carousel/dist/assets/owl.carousel.css ***!
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/owl.carousel/dist/assets/owl.carousel.css ***!
   \************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6374,7 +6374,7 @@ exports.push([module.i, "/**\n * Owl Carousel v2.3.4\n * Copyright 2013-2018 Dav
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.theme.default.css":
 /*!*****************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/owl.carousel/dist/assets/owl.theme.default.css ***!
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/owl.carousel/dist/assets/owl.theme.default.css ***!
   \*****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6393,7 +6393,7 @@ exports.push([module.i, "/**\n * Owl Carousel v2.3.4\n * Copyright 2013-2018 Dav
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/toastr/build/toastr.css":
 /*!******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/toastr/build/toastr.css ***!
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/toastr/build/toastr.css ***!
   \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -34581,7 +34581,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./owl.carousel.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.carousel.css");
+var content = __webpack_require__(/*! !../../../css-loader??ref--7-1!../../../postcss-loader/src??ref--7-2!./owl.carousel.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.carousel.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -34611,7 +34611,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./owl.theme.default.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.theme.default.css");
+var content = __webpack_require__(/*! !../../../css-loader??ref--7-1!../../../postcss-loader/src??ref--7-2!./owl.theme.default.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.theme.default.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -41718,7 +41718,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./toastr.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/toastr/build/toastr.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--7-1!../../postcss-loader/src??ref--7-2!./toastr.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/toastr/build/toastr.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -54617,14 +54617,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/auth.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/auth.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!****************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/auth.scss ./resources/sass/app.scss ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\sass\auth.scss */"./resources/sass/auth.scss");
 module.exports = __webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\sass\app.scss */"./resources/sass/app.scss");
 
 

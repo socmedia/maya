@@ -31,4 +31,18 @@ Route::group([
     'middleware' => 'verified',
 ], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    # Blog Route
+    Route::group([
+        'prefix' => 'artikel',
+        'as' => 'article.',
+    ], function () {
+        Route::get('/', [App\Http\Controllers\BlogController::class, 'index'])->name('index');
+        Route::get('/tambah', [App\Http\Controllers\BlogController::class, 'create'])->name('create');
+        Route::post('/', [App\Http\Controllers\BlogController::class, 'store'])->name('post');
+        Route::get('/baca/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('show');
+        Route::get('/ubah/{slug}', [App\Http\Controllers\BlogController::class, 'edit'])->name('edit');
+        Route::put('/{id}', [App\Http\Controllers\BlogController::class, 'update'])->name('update');
+        Route::delete('/{id}', [App\Http\Controllers\BlogController::class, 'destroy'])->name('delete');
+    });
 });

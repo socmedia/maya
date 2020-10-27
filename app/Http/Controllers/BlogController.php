@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Model\BlogModel;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    private $model;
+
+    /**
+     * Class constructor.
+     */
+    public function __construct(BlogModel $blogModel)
+    {
+        $this->model = $blogModel;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.artikel.index');
     }
 
     /**
@@ -24,7 +34,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.artikel.create');
     }
 
     /**
@@ -35,7 +45,8 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->model->create($request);
+        return redirect()->route('article.index')->with('success', 'Artikel berhasil ditambahkan');
     }
 
     /**
@@ -57,7 +68,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('pages.artikel.edit');
     }
 
     /**

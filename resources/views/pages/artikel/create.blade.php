@@ -6,11 +6,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Home</h1>
+                    <h1 class="m-0 text-dark">Artikel</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('article.index')}}">Artikel</a></li>
+                        <li class="breadcrumb-item active"><a>Tambah</a></li>
                     </ol>
                 </div>
             </div>
@@ -26,7 +28,7 @@
                             Tulis Artikel
                         </h3>
                         <div class="card-tools">
-                            <button type="button" class="btn btn-primary btn-sm" onclick="">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="window.history.back()">
                                 <i class="fas fa-arrow-left fa-fw mr-2"></i>Kembali
                             </button>
                         </div>
@@ -40,7 +42,11 @@
                             <fieldset class="form-group row">
                                 <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                     <label for="title">Judul Artikel</label>
-                                    <input type="text" class="form-control" name="title">
+                                    <input type="text" class="form-control @error('title') {{'is-invalid'}} @enderror"
+                                        name="title" value="{{old('title')}}">
+                                    @error('title')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="title">Tanggal Pembuatan</label>
@@ -52,16 +58,24 @@
 
                             <fieldset class="form-group row">
                                 <div class="col-12">
-                                    <label for="publish">Subjek <small>(Deskripsi Singkat)</small></label>
-                                    <textarea class="form-control" name="subject"
-                                        style="resize: none; height: 80px;"></textarea>
+                                    <label for="subject">Subjek <small>(Deskripsi Singkat)</small></label>
+                                    <textarea class="form-control @error('subject') {{'is-invalid'}} @enderror"
+                                        name="subject" style="resize: none; height: 80px;"
+                                        name="subject">{{old('subject')}}</textarea>
+                                    @error('subject')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                             </fieldset>
 
                             <fieldset class="form-group row">
                                 <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                     <label for="tags">Tags</label>
-                                    <textarea type="text" name="tags" placeholder="Masukkan tags"></textarea>
+                                    <textarea type="text" name="tags" class="@error('tags'){{'border-danger'}}@enderror"
+                                        placeholder="Masukkan tags">{{old('tags')}}</textarea>
+                                    @error('tags')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <label for="publish">Status Artikel</label>
@@ -79,12 +93,18 @@
                                             </label>
                                         </div>
                                     </div>
+                                    @error('publish')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                             </fieldset>
 
                             <fieldset class="form-group row">
                                 <div class="col-12">
-                                    <textarea class="textarea" name="article"></textarea>
+                                    <textarea class="textarea" name="article">{{old('article')}}</textarea>
+                                    @error('article')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                             </fieldset>
 
@@ -120,13 +140,7 @@
     // init Tagify script on the above inputs
     tagify = new Tagify(input, {
       maxTags: 10,
-      delimiters       : null,
-      dropdown: {
-        maxItems: 20,           // <- mixumum allowed rendered suggestions
-        classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
-        enabled: 0,             // <- show suggestions on focus
-        closeOnSelect: false    // <- do not hide the suggestions dropdown once an item has been selected
-      }
+      delimiters: null
     })
     $('.textarea').summernote({
         height: 500,

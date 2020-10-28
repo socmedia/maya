@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BlogRequest;
 use App\Models\Blog;
 use App\Models\Model\BlogModel;
 use Illuminate\Http\Request;
@@ -22,9 +23,10 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.artikel.index');
+        $articles = $this->model->getAll($request);
+        return view('pages.artikel.index', compact('articles'));
     }
 
     /**
@@ -43,7 +45,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogRequest $request)
     {
         $this->model->create($request);
         return redirect()->route('article.index')->with('success', 'Artikel berhasil ditambahkan');
@@ -55,9 +57,11 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($slug)
     {
-        //
+        $article = $this->model->findBySlug($slug);
+        $tags = explode(',', $article->tags);
+        return view('pages.artikel.show', compact('article', 'tags'));
     }
 
     /**
@@ -66,9 +70,10 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($slug)
     {
-        return view('pages.artikel.edit');
+        $article = $this->model->findBySlug($slug);
+        return view('pages.artikel.edit', compact('article'));
     }
 
     /**
@@ -78,9 +83,10 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, $id)
     {
-        //
+        $this->model->update($request, $id);
+        return redirect()->route('article.index')->with('success', 'Artikel berhasil diubah');
     }
 
     /**
@@ -89,8 +95,9 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        //
+        $this->model->delete($id);
+        return redirect()->route('article.index')->with('success', 'Artikel berhasil dihapus');
     }
 }

@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link rel="shortcut icon" href="{{asset('img/icofont.png')}}" type="image/x-icon">
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <script src="{{ asset('js/adm.js') }}"></script>
@@ -25,11 +25,11 @@
     @stack('styles')
 </head>
 
-<body class="sidebar-mini layout-navbar-fixed">
+<body class="sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed accent-maroon">
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark navbar-dark" style="height: 65px">
+        <nav class="main-header navbar navbar-expand border-bottom-0 navbar-light navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -40,10 +40,11 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar elevation-4 sidebar-light-secondary">
+        <aside class="main-sidebar elevation-4 sidebar-dark-warning">
             <!-- Brand Logo -->
-            <a class="brand-link text-center" style="height: 65px; transition: none">
-                <img src="{{asset('img/logo.png')}}" alt="AdminLTE Logo" height="35px">
+            <a class="brand-link text-center">
+                <img class="brand-image" src="{{asset('img/icofont.png')}}" alt="AdminLTE Logo">
+                <span class="brand-text text-uppercase">Maya Springbed</span>
             </a>
 
             <!-- Sidebar -->
@@ -67,15 +68,17 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="" class="nav-link active">
+                            <a href="{{route('product.index')}}"
+                                class="nav-link {{request()->routeIs('product*') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-bed"></i>
                                 <p>
                                     Produk
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="javascript:void(0)" class="nav-link active">
+                        <li class="nav-item has-treeview {{request()->routeIs('article*') ? 'menu-open' : ''}}">
+                            <a href="javascript:void(0)"
+                                class="nav-link {{request()->routeIs('article*') ? 'active' : ''}}">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Artikel
@@ -84,15 +87,17 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('article.index')}}" class="nav-link active">
+                                    <a href="{{route('article.index')}}"
+                                        class="nav-link {{(request()->routeIs('article*') && ! request()->routeIs('article.create')) ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Daftar Artikel</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('article.create')}}" class="nav-link">
+                                    <a href="{{route('article.create')}}"
+                                        class="nav-link {{request()->routeIs('article.create') ? 'active' : ''}}">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Tambah Artikel</p>
+                                        <p>Tulis Artikel</p>
                                     </a>
                                 </li>
                             </ul>

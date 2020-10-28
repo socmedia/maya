@@ -45,4 +45,18 @@ Route::group([
         Route::put('/{id}', [App\Http\Controllers\BlogController::class, 'update'])->name('update');
         Route::delete('/{id}', [App\Http\Controllers\BlogController::class, 'destroy'])->name('delete');
     });
+
+    # Product Route
+    Route::group([
+        'prefix' => 'produk',
+        'as' => 'product.',
+    ], function () {
+        Route::get('/', [App\Http\Controllers\ProductController::class, 'index'])->name('index');
+        Route::get('/tambah', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
+        Route::post('/', [App\Http\Controllers\ProductController::class, 'store'])->name('post');
+        Route::get('/detail/{slug}', [App\Http\Controllers\ProductController::class, 'show'])->name('show');
+        Route::get('/ubah/{slug}', [App\Http\Controllers\ProductController::class, 'edit'])->name('edit');
+        Route::put('/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('update');
+        Route::delete('/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('delete');
+    });
 });

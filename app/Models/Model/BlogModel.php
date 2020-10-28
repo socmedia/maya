@@ -47,12 +47,17 @@ class BlogModel
 
     public function update($request, $id)
     {
+        $decode = json_decode($request->tags);
+        $tags = array_map(function ($arr) {
+            return $arr->value;
+        }, $decode);
+
         $blog = Blog::findOrFail($id);
         $blog->title = $request->title;
         $blog->slug_title = Str::slug($request->title);
         $blog->subject = $request->subject;
         $blog->description = $request->article;
-        $blog->tags = $request->tags;
+        $blog->tags = implode(',', $tags);
         $blog->viewed = 0;
         $blog->published = $request->publish;
         return $blog->save();

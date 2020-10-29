@@ -36,10 +36,28 @@
 
 
                     <div class="card-body p-2 p-lg-4">
-                        <form action="{{route('product.post')}}" method="POST">
+                        <form action="{{route('product.post')}}" method="POST" enctype="multipart/form-data">
                             @csrf
 
+                            <fieldset class="form-group row flex-column-reverse flex-lg-row">
+                                <div class="col-12 col-lg-3 mb-3 mb-lg-0 mx-auto">
+                                    <div class="preview rounded">
+                                        <img src="https://via.placeholder.com/1000x1000.png?text=Gambar Produk"
+                                            class="preview-img">
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
                             <fieldset class="form-group row">
+                                <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                                    <label for="name">Gambar Produk</label> <br>
+                                    <input type="file" name="image" accept="image/*" class="" /> <br>
+                                    @error('image')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+
                                 <div class="col-12 col-lg-6 mb-3 mb-lg-0">
                                     <label for="name">Nama Produk</label>
                                     <input type="text" class="form-control @error('name') {{'is-invalid'}} @enderror"
@@ -48,29 +66,47 @@
                                     <small class="text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
-                                <div class="col-12 col-lg-6">
-                                    <label for="title">Tanggal Pembuatan</label>
-                                    <div class="form-control">
-                                        {{date('d M, Y h:i a')}}
-                                    </div>
+                            </fieldset>
+
+                            <fieldset class="form-group row">
+                                <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                                    <label for="production">Harga Produksi <small>(Harga tidak ditampilkan di landing
+                                            page)</small></label>
+                                    <input type="number"
+                                        class="form-control @error('production') {{'is-invalid'}} @enderror"
+                                        name="production" value="{{old('production')}}" min="1">
+                                    @error('production')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                                    <label for="sell">Harga Jual <small>(Harga tidak ditampilkan di landing
+                                            page)</small></label>
+                                    <input type="number" class="form-control @error('sell') {{'is-invalid'}} @enderror"
+                                        name="sell" value="{{old('sell')}}" min="1">
+                                    @error('sell')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
                             </fieldset>
 
                             <fieldset class="form-group row">
 
                                 <div class="col-12 col-lg-6">
-                                    <label for="is_showed">Status Produk</label>
+                                    <label for="is_showed">Visibilitas Produk <small>(Produk akan ditampilkan di
+                                            landing page)</small></label>
                                     <div class="d-flex">
                                         <div class="icheck-primary mr-2">
                                             <input type="radio" id="radioPrimary2" name="is_showed" value="0">
                                             <label for="radioPrimary2">
-                                                Tidak Aktif
+                                                Sembunyikan
                                             </label>
                                         </div>
                                         <div class="icheck-primary">
                                             <input type="radio" id="radioPrimary1" name="is_showed" value="1" checked>
                                             <label for="radioPrimary1">
-                                                Aktif
+                                                Tampilkan
                                             </label>
                                         </div>
                                     </div>
@@ -100,9 +136,7 @@
                     </div>
                 </div>
             </div>
-            <!-- /.col-->
         </div>
-        <!-- ./row -->
     </section>
 </div>
 @endsection
@@ -110,23 +144,41 @@
 @push('styles')
 <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-<link rel="stylesheet" href="https://unpkg.com/@yaireo/tagify/dist/tagify.css">
+<style>
+    .preview {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    .preview .preview-img {
+        width: 100%;
+    }
+</style>
 @endpush
 
 @push('scripts')
 <script src="https://unpkg.com/@yaireo/tagify"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
 <script>
-    var input = document.querySelector('textarea[name="tags"]'),
-    // init Tagify script on the above inputs
-    tagify = new Tagify(input, {
-      maxTags: 10,
-      delimiters: null
-    })
+    async function readURL(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                $('.preview-img').attr('src', e.target.result)
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
     $('.textarea').summernote({
         height: 500,
         codeviewFilterRegex: 'custom-regex',
         codeviewIframeWhitelistSrc: [document.location.origin]
+    })
+
+    $('input[type="file"]').change(function () {
+        readURL(this)
     })
 </script>
 @endpush

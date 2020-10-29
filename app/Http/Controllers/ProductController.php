@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Model\ProductModel;
 use Illuminate\Http\Request;
 
@@ -43,31 +44,34 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $this->model->create($request);
+        return redirect()->route('product.index')->with('success', 'Produk berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = $this->model->findBySlug($slug);
+        return view('pages.produk.edit', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $product = $this->model->findBySlug($slug);
+        return view('pages.produk.edit', compact('product'));
     }
 
     /**
@@ -79,7 +83,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->model->update($request, $id);
+        return redirect()->route('product.index')->with('success', 'Produk berhasil diubah');
     }
 
     /**

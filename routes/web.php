@@ -60,3 +60,10 @@ Route::group([
         Route::delete('/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('delete');
     });
 });
+
+Route::group([
+    'prefix' => 'image',
+    'as' => 'image.',
+], function () {
+    Route::get('/{imageName}/get', [App\Http\Controllers\GeneralApiController::class, 'showProductImage'])->name('showProductImg');
+});

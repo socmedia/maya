@@ -55,7 +55,7 @@
                                         <td>#</td>
                                         <td>Gambar</td>
                                         <td>Nama</td>
-                                        <td>Status</td>
+                                        <td>Visibilitas</td>
                                         <td>Aksi</td>
                                     </tr>
                                 </thead>
@@ -63,16 +63,19 @@
                                     @foreach ($products as $product)
                                     <tr>
                                         <td class="text-center">{{$loop->iteration}}</td>
-                                        <td><img width="80px" src="{{$product->image}}" alt="{{$product->image}}"></td>
+                                        <td class="text-center">
+                                            <img width="130px" src="{{route('image.showProductImg', $product->image)}}"
+                                                alt="{{$product->image}}" loading="lazy">
+                                        </td>
                                         <td>{{$product->name}}</td>
-                                        <td>
-                                            @if ($product->published === 0)
-                                            <span class="badge badge-pill badge-default">Draft</span>
-                                            @elseif ($product->published === 1)
-                                            <span class="badge badge-pill badge-success">Published</span>
+                                        <td class="text-center">
+                                            @if ($product->is_showed === 0)
+                                            <span class="badge badge-pill badge-secondary">Disembunyikan</span>
+                                            @elseif ($product->is_showed === 1)
+                                            <span class="badge badge-pill badge-success">Ditampilkan</span>
                                             @endif
                                         </td>
-                                        <td class="d-flex justify-content-evenly">
+                                        <td class="d-flex justify-content-center">
                                             <a href="{{route('product.show', $product->slug_name)}}"
                                                 class="btn btn-outline-default" title="Detail Produk">
                                                 <i class="fas fa-eye fa-fw"></i>

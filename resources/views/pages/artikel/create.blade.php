@@ -101,7 +101,7 @@
 
                             <fieldset class="form-group row">
                                 <div class="col-12">
-                                    <textarea class="textarea" name="article">{{old('article')}}</textarea>
+                                    <textarea class="textarea" name="article" id="editor">{{old('article')}}</textarea>
                                     @error('article')
                                     <small class="text-danger">{{$message}}</small>
                                     @enderror
@@ -127,14 +127,14 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
 <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
 <link rel="stylesheet" href="https://unpkg.com/@yaireo/tagify/dist/tagify.css">
 @endpush
 
 @push('scripts')
 <script src="https://unpkg.com/@yaireo/tagify"></script>
-<script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('plugins/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('plugins/ckeditor/config.js')}}"></script>
 <script>
     var input = document.querySelector('textarea[name="tags"]'),
     // init Tagify script on the above inputs
@@ -142,10 +142,11 @@
       maxTags: 10,
       delimiters: null
     })
-    $('.textarea').summernote({
-        height: 500,
-        codeviewFilterRegex: 'custom-regex',
-        codeviewIframeWhitelistSrc: [document.location.origin]
-    })
+
+    CKEDITOR.replace('editor', {
+      width: 'auto',
+      height: 750,
+      extraAllowedContent: 'h1;a[!href]',
+    });
 </script>
 @endpush

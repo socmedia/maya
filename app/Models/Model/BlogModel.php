@@ -2,11 +2,14 @@
 
 namespace App\Models\Model;
 
+use App\Contracts\ArticleContracts;
 use App\Models\Blog;
 use Illuminate\Support\Str;
 
 class BlogModel
 {
+    use ArticleContracts;
+
     public function getAll($request)
     {
         $blog = Blog::orderBy('created_at', 'desc');

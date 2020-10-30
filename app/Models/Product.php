@@ -12,6 +12,6 @@ class Product extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id', 'name', 'slug_name', 'image', 'description', 'production_price', 'sell_price', 'is_showed'
+        'id', 'name', 'slug_name', 'thumbnail', 'image', 'description', 'production_price', 'sell_price', 'is_showed'
     ];
 }

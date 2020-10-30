@@ -129,8 +129,8 @@ hr {
             padding-right: 15px;
         }
 
-        > .active {
-            > a {
+        >.active {
+            >a {
                 color: $company-color !important;
                 background-color: transparent;
 
@@ -152,7 +152,7 @@ hr {
             background-color: #fff;
             border-color: #fff;
 
-            > .icon-bar {
+            >.icon-bar {
                 background-color: $company-color;
             }
         }
@@ -274,11 +274,9 @@ hr {
     background-size: cover;
 
     .overlay {
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(112, 173, 71, 0.4) 100%
-        );
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(112, 173, 71, 0.4) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#6670ad47', GradientType=0);
     }
 
@@ -401,7 +399,7 @@ header {
         opacity: 0;
         transition: all 0.5s;
 
-        > h4 {
+        >h4 {
             opacity: 0;
             color: #fff;
             transform: translateY(100%);
@@ -415,7 +413,7 @@ header {
 
     &:hover {
         .hover-text {
-            > h4 {
+            >h4 {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -645,6 +643,7 @@ textarea {
 button,
 input,
 textarea {
+
     &:focus,
     &:active,
     &:hover {
@@ -984,5 +983,17 @@ textarea {
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+
+
+.btn.company {
+    border-color: $company-color;
+    box-shadow: none;
+
+    &:hover {
+        background: $company-color;
+        opacity: .8;
+        color: white;
     }
 }

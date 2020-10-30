@@ -25,6 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:255',
+            'thumbnail' => 'required|image|mimes:png,jpg,jpeg|max:2048',
             'image' => 'required|image|mimes:png,jpg,jpeg|max:2048',
             'production' => 'nullable|numeric',
             'sell' => 'nullable|numeric|regex:[0-9]',

@@ -11870,3 +11870,14 @@ textarea:hover {
   }
 }
 
+.btn.company {
+  border-color: #FFA400;
+  box-shadow: none;
+}
+
+.btn.company:hover {
+  background: #FFA400;
+  opacity: 0.8;
+  color: white;
+}
+

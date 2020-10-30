@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('landing.index');
-});
+Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('index');
 
 Route::post('/hubungi-kami', function (ContactUsRequest $request) {
     return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->queue(new ContactUsMail($request->all()));
@@ -66,4 +64,9 @@ Route::group([
     'as' => 'image.',
 ], function () {
     Route::get('/{imageName}/get', [App\Http\Controllers\GeneralApiController::class, 'showProductImage'])->name('showProductImg');
+});
+
+
+Route::group(['prefix' => 'artikel'], function () {
+    Route::get('/baca/{slug}', [App\Http\Controllers\LandingController::class, 'showArticle'])->name('showArticle');
 });

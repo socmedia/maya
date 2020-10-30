@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Model\ProductModel;
 use App\Statics\Product;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
@@ -9,6 +10,16 @@ use Illuminate\Support\Facades\Response;
 class GeneralApiController extends Controller
 {
     use Product;
+
+    private $product;
+
+    /**
+     * Class constructor.
+     */
+    public function __construct(ProductModel $productModel)
+    {
+        $this->product = $productModel;
+    }
 
     public function show($slug)
     {
@@ -18,6 +29,17 @@ class GeneralApiController extends Controller
 
         return response()->json([
             'message' => 'Not found request',
+        ], 404);
+    }
+
+    public function showProduct($slug)
+    {
+        $product = $this->product->findBySlug($slug);
+        if($product){
+            return response()->json($product, 200);
+        }
+        return response()->json([
+            'message' => 'Request not found',
         ], 404);
     }
 

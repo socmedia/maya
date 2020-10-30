@@ -46,40 +46,15 @@
             },
             method: 'GET',
             success: function (data) {
-                let li = '';
-                data.size.map(function (v) {
-                    return li += `<li>${v}</li>`;
-                })
                 $('[modal-body-loader]').hide();
                 $('[modal-body-real]').removeClass('d-none').fadeIn();
-                $('#modal-description').find('img').attr('src', `/img/detail/${slug}.png`);
-                $('#modal-description').find('#comfort').html(data.comfort);
-                $('#modal-description').find('#color').html(data.color);
-                $('#modal-description').find('#height').html(data.height);
-                $('#modal-description').find('#size').html(`<ol class="m-0">${li}</ol>`);
-                $('#modal-description').find('#guarantee').html(data.guarantee);
-                $('#modal-description').find('#description').html(data.description);
+                $('#modal-description').find('img').attr('src', `${document.location.origin}/image/${data.image}/get`);
+                $('#modal-description').find('.product-info').html(data.description);
             },
             error: function (err) {
                 console.error(err.responseJSON.message)
             }
         })
-
-        gsap.fromTo(".modal-dialog", {
-            y: -50
-        }, {
-            y: 0,
-            duration: .3,
-            ease: "ease.power1"
-        });
-
-        gsap.fromTo("h2", {
-            y: 50
-        }, {
-            y: 0,
-            duration: .3,
-            ease: "ease.power1"
-        });
     })
 
     $(document).ready(function () {

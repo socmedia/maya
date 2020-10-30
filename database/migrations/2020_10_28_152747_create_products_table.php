@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('slug_name');
+            $table->string('thumbnail');
             $table->string('image');
             $table->text('description');
             $table->boolean('is_showed');

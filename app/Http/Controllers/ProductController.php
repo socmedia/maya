@@ -95,6 +95,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->model->delete($id);
+        return redirect()->route('product.index')->with('success', 'Produk berhasil dihapus');
     }
 }

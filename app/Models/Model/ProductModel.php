@@ -14,6 +14,12 @@ class ProductModel
         return $product->get();
     }
 
+    public function getOnly($arr = '*')
+    {
+        $product = Product::orderBy('created_at', 'desc');
+        return $product->get($arr);
+    }
+
     public function findById($id)
     {
         $product = Product::findOrFail($id);
@@ -32,6 +38,9 @@ class ProductModel
         $product->id = Str::uuid()->getHex();
         $product->name = $request->name;
         $product->slug_name = Str::slug($request->name);
+        if ($request->file('thumbnail')) {
+            $this->uploadthumbnail($request, $product);
+        }
         if ($request->file('image')) {
             $this->uploadImage($request, $product);
         }
@@ -47,6 +56,9 @@ class ProductModel
         $product = Product::findOrFail($id);
         $product->name = $request->name;
         $product->slug_name = Str::slug($request->name);
+        if ($request->file('thumbnail')) {
+            $this->updateThumbnail($request, $product);
+        }
         if ($request->file('image')) {
             $this->updateImage($request, $product);
         }
@@ -60,6 +72,8 @@ class ProductModel
     public function delete($id)
     {
         $product = Product::findOrFail($id);
+        $this->deletethumbnail($product->thumbnail);
+        $this->deleteImage($product->image);
         return $product->delete();
     }
 
@@ -82,5 +96,26 @@ class ProductModel
     {
         $storage = Storage::disk('productImage');
         return $storage->delete($imageName);
+    }
+
+    protected function uploadthumbnail($request, $collection)
+    {
+        $name = 'prd_' . time() . '_' . random_int(100, 999) . '.' . $request->file('thumbnail')
+            ->getClientOriginalExtension();
+        $request->file('thumbnail')
+            ->move(storage_path('app/public/image/product/'), $name);
+        return $collection->thumbnail = $name;
+    }
+
+    protected function updatethumbnail($request, $collection)
+    {
+        $this->deletethumbnail($collection->thumbnail);
+        return $this->uploadthumbnail($request, $collection);
+    }
+
+    protected function deletethumbnail($thumbnailName)
+    {
+        $storage = Storage::disk('productImage');
+        return $storage->delete($thumbnailName);
     }
 }

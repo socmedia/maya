@@ -42,26 +42,43 @@
                             @method('put')
 
                             <fieldset class="form-group row flex-column-reverse flex-lg-row">
-                                <div class="col-12 col-lg-3 mb-3 mb-lg-0 mx-auto">
-                                    <div class="preview rounded">
-                                        <img src="{{($product->image !== null || $product->image !== '') ? route('image.showProductImg', $product->image) : 'https://via.placeholder.com/1000x1000.png?text=Gambar Produk'}}"
-                                            class="preview-img">
-                                    </div>
+
+                                <div class="col-12 col-lg-3 mb-3 mb-lg-0">
+                                    <figure>
+                                        <div class="preview rounded">
+                                            <img src="{{($product->thumbnail !== null && $product->thumbnail !== '') ? route('image.showProductImg', $product->thumbnail) : 'https://via.placeholder.com/1000x1000.png?text=Thumbnail Produk'}}"
+                                                class="preview-img-thumbnail">
+                                        </div>
+                                        <figcaption>
+                                            <label for="name">Thumbnail Produk</label> <br>
+                                            <input type="file" name="thumbnail" accept="image/*" class="" /> <br>
+                                            @error('thumbnail')
+                                            <small class="text-danger">{{$message}}</small>
+                                            @enderror
+                                        </figcaption>
+                                    </figure>
+                                </div>
+
+                                <div class="col-12 col-lg-3">
+                                    <figure>
+                                        <div class="preview rounded">
+                                            <img src="{{($product->image !== null || $product->image !== '') ? route('image.showProductImg', $product->image) : 'https://via.placeholder.com/1000x1000.png?text=Gambar Produk'}}"
+                                                class="preview-img">
+                                        </div>
+                                        <figcaption>
+                                            <label for="name">Gambar Produk</label> <br>
+                                            <input type="file" name="image" accept="image/*" class="" /> <br>
+                                            @error('image')
+                                            <small class="text-danger">{{$message}}</small>
+                                            @enderror
+                                        </figcaption>
+                                    </figure>
                                 </div>
 
                             </fieldset>
 
                             <fieldset class="form-group row">
-                                <div class="col-12 col-lg-6 mb-3 mb-lg-0">
-                                    <label for="name">Gambar Produk <small>(Kosongi jika tidak ada
-                                            perubahan)</small></label> <br>
-                                    <input type="file" name="image" accept="image/*" class="" /> <br>
-                                    @error('image')
-                                    <small class="text-danger">{{$message}}</small>
-                                    @enderror
-                                </div>
-
-                                <div class="col-12 col-lg-6 mb-3 mb-lg-0">
+                                <div class="col-12">
                                     <label for="name">Nama Produk</label>
                                     <input type="text" class="form-control @error('name') {{'is-invalid'}} @enderror"
                                         name="name" value="{{$product->name}}">
@@ -123,7 +140,8 @@
 
                             <fieldset class="form-group row">
                                 <div class="col-12">
-                                    <textarea class="textarea" name="description">{{$product->description}}</textarea>
+                                    <textarea class="textarea" id="editor"
+                                        name="description">{{$product->description}}</textarea>
                                     @error('description')
                                     <small class="text-danger">{{$message}}</small>
                                     @enderror
@@ -156,7 +174,8 @@
         width: 100%;
     }
 
-    .preview .preview-img {
+    .preview .preview-img,
+    .preview .preview-img-thumbnail {
         width: 100%;
     }
 </style>
@@ -165,25 +184,32 @@
 @push('scripts')
 <script src="https://unpkg.com/@yaireo/tagify"></script>
 <script src="{{asset('plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('plugins/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('plugins/ckeditor/config.js')}}"></script>
 <script>
     async function readURL(input) {
         if (input.files && input.files[0]) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                $('.preview-img').attr('src', e.target.result)
+                if(input.name === 'image'){
+                    $('.preview-img').attr('src', e.target.result)
+                }
+                if(input.name === 'thumbnail'){
+                    $('.preview-img-thumbnail').attr('src', e.target.result)
+                }
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-    $('.textarea').summernote({
-        height: 500,
-        codeviewFilterRegex: 'custom-regex',
-        codeviewIframeWhitelistSrc: [document.location.origin]
-    })
-
     $('input[type="file"]').change(function () {
         readURL(this)
     })
+
+    CKEDITOR.replace('editor', {
+      width: 'auto',
+      height: 750,
+      extraAllowedContent: 'h1;a[!href]',
+    });
 </script>
 @endpush

@@ -53,7 +53,7 @@
                                 <thead>
                                     <tr>
                                         <td>#</td>
-                                        <td>Gambar</td>
+                                        <td>Thumbnail</td>
                                         <td>Nama</td>
                                         <td>Visibilitas</td>
                                         <td>Aksi</td>
@@ -64,8 +64,9 @@
                                     <tr>
                                         <td class="text-center">{{$loop->iteration}}</td>
                                         <td class="text-center">
-                                            <img width="130px" src="{{route('image.showProductImg', $product->image)}}"
-                                                alt="{{$product->image}}" loading="lazy">
+                                            <img width="130px"
+                                                src="{{route('image.showProductImg', $product->thumbnail)}}"
+                                                alt="{{$product->thumbnail}}" loading="lazy">
                                         </td>
                                         <td>{{$product->name}}</td>
                                         <td class="text-center">
@@ -144,7 +145,6 @@
 <script src="{{asset('plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script>
     $('table').DataTable({
-        width: '100%',
         dom: `<'row'
                 <'col-lg-6 align-self-center col-md-6 col-sm-12text-right text-sm-left'B>
                 <'col-lg-6 align-self-center col-md-6 col-sm-12 text-right text-sm-left'f>

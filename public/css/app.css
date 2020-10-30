@@ -11002,8 +11002,14 @@ hr {
   border: 0;
 }
 
+::-webkit-scrollbar-track {
+  z-index: 9999;
+}
+
 .navbar {
-  padding: 20px;
+  display: flex;
+  width: 100%;
+  padding: 10px;
   transition: all 0.8s;
 }
 
@@ -11031,6 +11037,7 @@ hr {
 .navbar .navbar-nav > .active > a {
   color: #FFA400 !important;
   background-color: transparent;
+  font-weight: 700;
 }
 
 .navbar .navbar-nav > .active > a:hover {
@@ -11058,6 +11065,8 @@ hr {
 }
 
 .navbar.scrolled {
+  position: fixed;
+  top: 0;
   background-color: #fff !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

@@ -32,7 +32,14 @@
 
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+        const height = window.pageYOffset;
+        console.log(height)
+            (height > 50) ? $('.navbar').addClass('scrolled') : $('.navbar').removeClass('scrolled');
 
+        })
+    </script>
     @stack('scripts')
 </body>
 

@@ -6321,7 +6321,7 @@ module.exports = {
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.carousel.css":
 /*!************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--8-1!./node_modules/postcss-loader/src??ref--8-2!./node_modules/owl.carousel/dist/assets/owl.carousel.css ***!
+  !*** ./node_modules/css-loader??ref--9-1!./node_modules/postcss-loader/src??ref--9-2!./node_modules/owl.carousel/dist/assets/owl.carousel.css ***!
   \************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6341,7 +6341,7 @@ exports.push([module.i, "/**\n * Owl Carousel v2.3.4\n * Copyright 2013-2018 Dav
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.theme.default.css":
 /*!*****************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--8-1!./node_modules/postcss-loader/src??ref--8-2!./node_modules/owl.carousel/dist/assets/owl.theme.default.css ***!
+  !*** ./node_modules/css-loader??ref--9-1!./node_modules/postcss-loader/src??ref--9-2!./node_modules/owl.carousel/dist/assets/owl.theme.default.css ***!
   \*****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -6360,7 +6360,7 @@ exports.push([module.i, "/**\n * Owl Carousel v2.3.4\n * Copyright 2013-2018 Dav
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/toastr/build/toastr.css":
 /*!******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--8-1!./node_modules/postcss-loader/src??ref--8-2!./node_modules/toastr/build/toastr.css ***!
+  !*** ./node_modules/css-loader??ref--9-1!./node_modules/postcss-loader/src??ref--9-2!./node_modules/toastr/build/toastr.css ***!
   \******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -34548,7 +34548,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--8-1!../../../postcss-loader/src??ref--8-2!./owl.carousel.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.carousel.css");
+var content = __webpack_require__(/*! !../../../css-loader??ref--9-1!../../../postcss-loader/src??ref--9-2!./owl.carousel.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.carousel.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -34578,7 +34578,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--8-1!../../../postcss-loader/src??ref--8-2!./owl.theme.default.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.theme.default.css");
+var content = __webpack_require__(/*! !../../../css-loader??ref--9-1!../../../postcss-loader/src??ref--9-2!./owl.theme.default.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/owl.carousel/dist/assets/owl.theme.default.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -41412,7 +41412,7 @@ module.exports = function (css) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../css-loader??ref--8-1!../../postcss-loader/src??ref--8-2!./toastr.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/toastr/build/toastr.css");
+var content = __webpack_require__(/*! !../../css-loader??ref--9-1!../../postcss-loader/src??ref--9-2!./toastr.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/toastr/build/toastr.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -42068,17 +42068,29 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/test.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/test.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!******************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/adm.scss ./resources/sass/auth.scss ./resources/sass/app.scss ***!
-  \******************************************************************************************************************/
+/*!*********************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/adm.scss ./resources/sass/test.scss ./resources/sass/auth.scss ./resources/sass/app.scss ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\sass\adm.scss */"./resources/sass/adm.scss");
-__webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\sass\auth.scss */"./resources/sass/auth.scss");
-module.exports = __webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\sass\adm.scss */"./resources/sass/adm.scss");
+__webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\sass\test.scss */"./resources/sass/test.scss");
+__webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\sass\auth.scss */"./resources/sass/auth.scss");
+module.exports = __webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

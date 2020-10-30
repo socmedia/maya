@@ -3,5 +3,7 @@
     "/js/app.js": "/js/app.js",
     "/css/adm.css": "/css/adm.css",
     "/css/auth.css": "/css/auth.css",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/test.js": "/js/test.js",
+    "/css/test.css": "/css/test.css"
 }

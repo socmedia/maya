@@ -105,8 +105,14 @@ hr {
     border: 0;
 }
 
+::-webkit-scrollbar-track {
+    z-index: 9999;
+}
+
 .navbar {
-    padding: 20px;
+    display: flex;
+    width: 100%;
+    padding: 10px;
     transition: all 0.8s;
 
     a.navbar-brand {
@@ -133,6 +139,7 @@ hr {
             >a {
                 color: $company-color !important;
                 background-color: transparent;
+                font-weight: 700;
 
                 &:hover {
                     color: $company-color !important;
@@ -164,6 +171,8 @@ hr {
     }
 
     &.scrolled {
+        position: fixed;
+        top: 0;
         background-color: $white !important;
         box-shadow: $shadow-center;
     }

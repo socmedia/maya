@@ -66,7 +66,10 @@ Route::group([
     Route::get('/{imageName}/get', [App\Http\Controllers\GeneralApiController::class, 'showProductImage'])->name('showProductImg');
 });
 
-
 Route::group(['prefix' => 'artikel'], function () {
     Route::get('/baca/{slug}', [App\Http\Controllers\LandingController::class, 'showArticle'])->name('showArticle');
+});
+
+Route::get('/test', function () {
+    return view('layouts.test');
 });

@@ -29,11 +29,6 @@ font & reset css
 */
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
 
-/*
----------------------------------------------
-reset
----------------------------------------------
-*/
 html,
 body,
 div,
@@ -181,12 +176,12 @@ body {
 }
 
 ::selection {
-    background: #ff589e;
+    background: $company-color;
     color: #fff;
 }
 
 ::-moz-selection {
-    background: #ff589e;
+    background: $company-color;
     color: #fff;
 }
 
@@ -197,7 +192,42 @@ body {
 }
 
 .section.colored {
-    background: #f2f2fe;
+    background: #fff8f3;
+}
+
+
+.float-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+
+    .btn {
+        box-shadow: 0 0 20px #0000002f;
+
+        &.btn-wa {
+            background-color: #00bfa5;
+            color: $white;
+            border: none;
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 16px;
+                margin-right: 7px;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #03ad97;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        right: 50px;
+    }
 }
 
 .hr {
@@ -276,7 +306,7 @@ body {
 }
 
 .left-text p.dark {
-    color: #3B566E;
+    color: #3b566e;
 }
 
 .padding-bottom-top-60 {
@@ -387,36 +417,30 @@ a.main-button-slider {
     font-size: 13px;
     border-radius: 20px;
     padding: 12px 20px;
-    background-color: #ff589e;
+    background-color: $company-color;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 0.25px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
 a.main-button-slider:hover {
-    background-color: #8261ee;
+    background-color: $company-color-hovered;
 }
 
 a.main-button {
     font-size: 13px;
     border-radius: 20px;
     padding: 12px 20px;
-    background-color: #8261ee;
+    background-color: $company-color-hovered;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 0.25px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
 a.main-button:hover {
-    background-color: #ff589e;
+    background-color: $company-color;
 }
 
 button.main-button {
@@ -426,20 +450,16 @@ button.main-button {
     font-size: 13px;
     border-radius: 20px;
     padding: 12px 20px;
-    background-color: #8261ee;
+    background-color: $company-color-hovered;
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 0.25px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
 button.main-button:hover {
-    background-color: #ff589e;
+    background-color: $company-color;
 }
-
 
 /*
 ---------------------------------------------
@@ -453,9 +473,6 @@ header
     right: 0px;
     z-index: 100;
     height: 100px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
@@ -464,33 +481,26 @@ header
     border-radius: 40px;
     min-height: 80px;
     background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header-area .main-nav .logo {
-    float: left;
-    margin-top: 37px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     margin-left: 30px;
+    height: 45px;
 }
 
 .header-area .main-nav .logo img {
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    height: 100%;
 }
 
 .header-area .main-nav .nav {
     float: right;
-    margin-top: 27px;
     margin-left: 0px;
     margin-right: 30px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     position: relative;
     z-index: 999;
@@ -510,9 +520,7 @@ header
     font-weight: 500;
     font-size: 13px;
     color: #fff;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
     height: 40px;
     line-height: 40px;
@@ -521,7 +529,7 @@ header
 }
 
 .header-area .main-nav .nav li a:hover {
-    color: #ff589e;
+    color: $company-color;
 }
 
 .header-area .main-nav .menu-trigger {
@@ -544,7 +552,7 @@ header
     -o-transition: all 0.4s;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
-    background-color: #3B566E;
+    background-color: #3b566e;
     display: block;
     position: absolute;
     width: 30px;
@@ -558,7 +566,7 @@ header
     -o-transition: all 0.4s;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
-    background-color: #3B566E;
+    background-color: #3b566e;
     display: block;
     position: absolute;
     width: 30px;
@@ -605,7 +613,7 @@ header
     -ms-transform: translateY(6px) translateX(1px) rotate(45deg);
     -webkit-transform: translateY(6px) translateX(1px) rotate(45deg);
     transform: translateY(6px) translateX(1px) rotate(45deg);
-    background-color: #3B566E;
+    background-color: #3b566e;
 }
 
 .header-area .main-nav .menu-trigger.active span:after {
@@ -613,19 +621,11 @@ header
     -ms-transform: translateY(-6px) translateX(1px) rotate(-45deg);
     -webkit-transform: translateY(-6px) translateX(1px) rotate(-45deg);
     transform: translateY(-6px) translateX(1px) rotate(-45deg);
-    background-color: #3B566E;
+    background-color: #3b566e;
 }
 
 .header-area.header-sticky {
     min-height: 80px;
-}
-
-.header-area.header-sticky .logo {
-    margin-top: 25px;
-}
-
-.header-area.header-sticky .nav {
-    margin-top: 20px !important;
 }
 
 .header-area.header-sticky .nav li a {
@@ -633,7 +633,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-    color: #ff589e;
+    color: $company-color;
 }
 
 @media (max-width: 1200px) {
@@ -660,7 +660,6 @@ header
     }
 
     .header-area .logo {
-        margin-top: 27px !important;
         margin-left: 30px;
     }
 
@@ -677,9 +676,6 @@ header
         width: 100%;
         margin-top: 80px !important;
         display: none;
-        -webkit-transition: all 0s ease 0s;
-        -moz-transition: all 0s ease 0s;
-        -o-transition: all 0s ease 0s;
         transition: all 0s ease 0s;
         margin-left: 0px;
     }
@@ -702,7 +698,7 @@ header
         padding: 0px !important;
         border: none !important;
         background: #fff !important;
-        color: #3B566E !important;
+        color: #3b566e !important;
     }
 
     .header-area .main-nav .nav li a:hover {
@@ -727,9 +723,7 @@ welcome
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../images/banner-bg.png);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-image: url(../images/bg.png);
     background-size: cover;
     height: 100vh;
 }
@@ -837,7 +831,6 @@ welcome
     }
 }
 
-
 /*
 ---------------------------------------------
 features
@@ -846,29 +839,24 @@ features
 .features-small-item {
     cursor: pointer;
     display: block;
-    background: #FFFFFF;
-    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+    background: #ffffff;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
     position: relative;
     margin-bottom: 30px;
 }
 
 .features-small-item:hover .icon {
-    background-color: #ff589e;
+    background-color: $company-color;
 }
 
 .features-small-item .icon {
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     width: 90px;
     height: 90px;
@@ -876,7 +864,7 @@ features
     margin: auto;
     position: relative;
     margin-bottom: 30px;
-    background: #8261ee;
+    background: $company-color-hovered;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
@@ -942,11 +930,11 @@ parallax & home seperator
 }
 
 .mini:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 140%;
     height: 140%;
-    opacity: .95;
+    opacity: 0.95;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -1012,9 +1000,7 @@ parallax & home seperator
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
     position: relative;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
     text-align: center;
 }
@@ -1024,12 +1010,12 @@ parallax & home seperator
 }
 
 .mini .mini-content .mini-box:before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     background: #fff;
     width: 100%;
-    opacity: .15;
+    opacity: 0.15;
     height: 100%;
     bottom: -10px;
     left: 0px;
@@ -1049,7 +1035,7 @@ parallax & home seperator
     font-weight: 400;
     font-size: 14px;
     color: #777;
-    letter-spacing: .75px;
+    letter-spacing: 0.75px;
 }
 
 .mini .mini-content .mini-box strong {
@@ -1068,11 +1054,11 @@ parallax & home seperator
 }
 
 .counter:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 140%;
     height: 140%;
-    opacity: .90;
+    opacity: 0.9;
     background-image: url(../images/fun-facts-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -1100,16 +1086,14 @@ parallax & home seperator
 }
 
 .counter .content .count-item.decoration-bottom:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 70%;
     height: 32px;
     top: 160px;
     left: 70%;
     background: url(../images/circle-dec.png) center center no-repeat;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
 }
 
@@ -1118,16 +1102,14 @@ parallax & home seperator
 }
 
 .counter .content .count-item.decoration-top:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 70%;
     height: 32px;
     top: 140px;
     left: 70%;
     background: url(../images/circle-dec.png) center center no-repeat;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
 }
 
@@ -1144,9 +1126,7 @@ parallax & home seperator
     margin-bottom: 10px;
     color: #fff;
     margin-top: 120px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
 }
 
@@ -1213,7 +1193,7 @@ team
 */
 .team-item {
     background: #fff;
-    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     position: relative;
     margin-bottom: 30px;
@@ -1229,7 +1209,7 @@ team
     margin-left: 25px;
     margin-top: 25px;
     font-size: 30px;
-    color: #4E47DE;
+    color: #4e47de;
     text-align: center;
 }
 
@@ -1240,9 +1220,7 @@ team
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
     margin-left: 25px;
     float: left;
@@ -1257,9 +1235,7 @@ team
     float: left;
     margin-left: 20px;
     margin-top: 8px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
+
     transition: all 0.3s ease 0s;
 }
 
@@ -1276,7 +1252,7 @@ team
     display: block;
     font-weight: 400;
     font-size: 15px;
-    color: #ff589e;
+    color: $company-color;
     letter-spacing: 0.25px;
 }
 
@@ -1298,7 +1274,7 @@ pricing
 ---------------------------------------------
 */
 .pricing-item {
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     margin-bottom: 30px;
@@ -1315,7 +1291,7 @@ pricing
 }
 
 .pricing-item.active .pricing-body .price-wrapper {
-    background-color: #ff589e;
+    background-color: $company-color;
 }
 
 .pricing-item.active .pricing-body .price-wrapper .currency {
@@ -1358,7 +1334,7 @@ pricing
     text-align: center;
     padding-top: 20px;
     padding-bottom: 13px;
-    background: #8261ee;
+    background: $company-color-hovered;
     width: 80%;
     margin: auto;
     margin-bottom: 40px;
@@ -1415,44 +1391,34 @@ blog
 ---------------------------------------------
 */
 .blog-post-thumb {
-    text-align: center;
     margin-bottom: 30px;
-}
 
-.blog-post-thumb.big .img {
-    height: 400px;
-}
+    .title {
+        height: 72px;
+        overflow: hidden;
 
-.blog-post-thumb .img {
-    overflow: hidden;
-    border-radius: 20px;
-    position: relative;
-    height: 200px;
+        h4 {
+            font-size: 1.3rem;
+        }
+    }
+
+    .title h4,
+    .desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .text {
+        text-align: justify;
+    }
 }
 
 .blog-post-thumb .blog-content {
     margin-top: -30px;
     padding-top: 50px;
-}
-
-.blog-post-thumb h3 {
-    margin-bottom: 20px !important;
-}
-
-.blog-post-thumb h3 a {
-    font-weight: 500;
-    font-size: 18px;
-    color: #1e1e1e;
-    letter-spacing: 0.25px;
-    line-height: 26px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-}
-
-.blog-post-thumb h3 a:hover {
-    color: #ff589e;
 }
 
 .blog-post-thumb .text {
@@ -1483,6 +1449,19 @@ blog
     text-align: left;
 }
 
+.section-sub-title {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-decoration-line: underline;
+}
+
+h5.card-title {
+    font-size: 1.1rem;
+
+    a {
+        color: black;
+    }
+}
 
 /*
 ---------------------------------------------
@@ -1505,7 +1484,7 @@ contact
 .contact-text {
     font-weight: 400;
     font-size: 14px;
-    color: #6F8BA4;
+    color: #6f8ba4;
     letter-spacing: 0.6px;
     line-height: 26px;
 }
@@ -1543,7 +1522,7 @@ footer
 ---------------------------------------------
 */
 footer {
-    background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+    background: rgb(68, 68, 68);
     padding-top: 30px;
 }
 
@@ -1559,24 +1538,15 @@ footer .social li {
 }
 
 footer .social li a {
-    color: #9d5bd9;
+    color: #fff;
+    opacity: .5;
     text-align: center;
-    background-color: #fff;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 50%;
-    display: inline-block;
     font-size: 16px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
 footer .social li a:hover {
-    background-color: #ff589e;
-    color: #fff;
+    opacity: 1;
 }
 
 footer .copyright {
@@ -1590,6 +1560,15 @@ footer .copyright {
     color: #fff;
     letter-spacing: 0.88px;
     text-transform: uppercase;
+
+    a {
+        color: $company-color;
+        opacity: .7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 @media (max-width: 991px) {
@@ -1613,7 +1592,7 @@ preloader
 */
 #preloader {
     overflow: hidden;
-    background-image: linear-gradient(135deg, #a759d1 0%, #8261ee 100%);
+    background-image: linear-gradient(135deg, #a759d1 0%, $company-color-hovered 100%);
     left: 0;
     right: 0;
     top: 0;

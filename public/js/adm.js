@@ -67610,7 +67610,7 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\js\adm.js */"./resources/js/adm.js");
+module.exports = __webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\js\adm.js */"./resources/js/adm.js");
 
 
 /***/ })

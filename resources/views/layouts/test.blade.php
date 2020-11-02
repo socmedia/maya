@@ -40,17 +40,18 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <a href="#" class="logo">
-                            <img src="img/logo.png" alt="Logo" />
+                            <img src="{{asset('img/logo.png')}}" alt="Logo" />
                         </a>
 
                         <ul class="nav">
                             <li><a href="#welcome" class="active">Beranda</a></li>
                             <li><a href="#features">Tentang Maya</a></li>
                             <li><a href="#work-process">Metode</a></li>
+                            <li><a href="#product">Produk</a></li>
                             <li><a href="#blog">Artikel</a></li>
                             <li><a href="#contact-us">Hubungi Kami</a></li>
                         </ul>
-                        <a class='menu-trigger'>
+                        <a class="menu-trigger">
                             <span>Menu</span>
                         </a>
                     </nav>
@@ -90,7 +91,7 @@
     <section class="section home-feature">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="row">
                         <!-- ***** Features Small Item Start ***** -->
                         <div class="col-lg-4 col-md-6 col-sm-6 col-12"
@@ -141,7 +142,8 @@
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="img/jahitan.png" class="rounded img-fluid d-block mx-auto" alt="Kesempurnaan jahitan">
+                    <img src="{{asset('img/jahitan.png')}}" class="rounded img-fluid d-block mx-auto"
+                        alt="Kesempurnaan jahitan">
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
@@ -156,7 +158,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="hr"></div>
                 </div>
             </div>
@@ -180,12 +182,12 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
                     data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <img src="img/pegas.png" class="rounded img-fluid d-block mx-auto" alt="Pegas terbaik">
+                    <img src="{{asset('img/pegas.png')}}" class="rounded img-fluid d-block mx-auto" alt="Pegas terbaik">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="hr"></div>
                 </div>
             </div>
@@ -197,7 +199,8 @@
             <div class="row">
                 <div class="col-lg-5 col-md-12 col-sm-12 align-self-center"
                     data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="img/7support.png" class="rounded img-fluid d-block mx-auto" alt="7 support zones">
+                    <img src="{{asset('img/7support.png')}}" class="rounded img-fluid d-block mx-auto"
+                        alt="7 support zones">
                 </div>
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
@@ -274,11 +277,72 @@
         </div>
     </section>
 
+    <section class="section" id="product">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="center-heading">
+                        <h2 class="section-title"><span class="dif">Katalog</span> Maya Spring Bed</h2>
+                    </div>
+
+                    <div class="offset-lg-3 col-lg-6">
+                        <div class="center-text">
+                            <p>
+                                <strong>Maya Spring Bed</strong> memiliki berbagai macam produk dengan kualitas premium
+                                dan dengan harga
+                                yang
+                                terjangkau.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card product__card">
+                                <div class="card-body">
+                                    <figure class="img">
+                                        <a href="javascript:void(0)" data-slug="sporty" show-modal="">
+                                            <figcaption>
+                                                <div class="product__name">Elegance 2 in 1</div>
+                                            </figcaption>
+                                            <img src="{{asset('img/product/elegance.png')}}" alt="">
+                                        </a>
+                                    </figure>
+                                    <figcaption class="product__info">
+                                        <a href="https://api.whatsapp.com/send?phone=+6285876771888&amp;text=Halo kak ! Saya mau menanyakan seputar produk Sporty ini :)"
+                                            class="btn-cart" target="_blank">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M8.98837 22.875C9.53022 22.875 9.96947 22.4086 9.96947 21.8333C9.96947 21.258 9.53022 20.7917 8.98837 20.7917C8.44652 20.7917 8.00726 21.258 8.00726 21.8333C8.00726 22.4086 8.44652 22.875 8.98837 22.875Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M19.7805 22.875C20.3224 22.875 20.7616 22.4086 20.7616 21.8333C20.7616 21.258 20.3224 20.7917 19.7805 20.7917C19.2387 20.7917 18.7994 21.258 18.7994 21.8333C18.7994 22.4086 19.2387 22.875 19.7805 22.875Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M1.13953 1H5.06394L7.69331 14.9479C7.78302 15.4275 8.02875 15.8583 8.38748 16.1649C8.74621 16.4715 9.19508 16.6344 9.65551 16.625H19.1919C19.6523 16.6344 20.1012 16.4715 20.4599 16.1649C20.8186 15.8583 21.0643 15.4275 21.1541 14.9479L22.7238 6.20833H6.04505"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </svg>
+                                            Beli Produk
+                                        </a>
+                                    </figcaption>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="blog">
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="center-heading">
                         <h2 class="section-title">Artikel</h2>
                     </div>
@@ -290,7 +354,7 @@
                     <h3 class="section-sub-title">Terbaru</h3>
 
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-12 col-md-6">
                             <div class="blog-post-thumb">
                                 <div class="blog-content">
                                     <div class="title">
@@ -317,7 +381,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-12 col-md-6">
                             <div class="blog-post-thumb">
                                 <div class="blog-content">
                                     <div class="title">
@@ -344,7 +408,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="col-12 col-md-6">
                             <div class="blog-post-thumb">
                                 <div class="blog-content">
                                     <div class="title">
@@ -442,7 +506,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="center-heading">
                         <h2 class="section-title">Hubungi Kami</h2>
                     </div>
@@ -521,7 +585,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="col-12 col-md-12 col-sm-12">
                     <ul class="social">
                         <li>
                             <a href="https://www.instagram.com/maya.springbed/" target="_blank">Instagram</a>
@@ -540,16 +604,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <p class="copyright text-capitalize">Copyright &copy; 2020. <a
-                            href="https://mayaspringbed.id"><b>Maya Spring
-                                Bed</b></a>. All rights
-                        reserved.</p>
+                <div class="col-12">
+                    <p class="copyright text-capitalize">
+                        Copyright &copy; 2020.
+                        <a href="https://mayaspringbed.id">
+                            <b>Maya Spring Bed</b>
+                        </a>. All rights reserved.
 
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
+
     <div class="float-button">
         <a href="https://api.whatsapp.com/send?phone=+6285876771888&text=Saya ingin bertanya seputar produk maya"
             target="_blank" class="btn btn-wa btn-primary">

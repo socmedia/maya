@@ -36304,7 +36304,7 @@ try {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\_WEB\MAYA\BACKEND\resources\js\test.js */"./resources/js/test.js");
+module.exports = __webpack_require__(/*! E:\Kerjo\MAYA\maya\resources\js\test.js */"./resources/js/test.js");
 
 
 /***/ })

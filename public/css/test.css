@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900);/*
+@import url(https://fonts.googleapis.com/css2?family=Sriracha&display=swap);@import url(https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900);/*
  * jQuery FlexSlider v2.7.1
  * http://www.woothemes.com/flexslider/
  *
@@ -15,7 +15,7 @@
 @font-face {
   font-family: 'flexslider-icon';
   src: url(/fonts/flexslider-icon.eot?9c9cb7a6055043933ba68854f521af45);
-  src: url(/fonts/flexslider-icon.eot?9c9cb7a6055043933ba68854f521af45?#iefix) format('embedded-opentype'), url(/fonts/flexslider-icon.woff?f8b92f66539473eea649c8514eb836a0) format('woff'), url(/fonts/flexslider-icon.ttf?b4c9e5057989b9727a5df4e0a21af33c) format('truetype'), url(/fonts/flexslider-icon.svg?87b7cecd94ae076c2a7140c321e4452b#flexslider-icon) format('svg');
+  src: url(/fonts/flexslider-icon.eot?9c9cb7a6055043933ba68854f521af45?#iefix) format('embedded-opentype'), url(/fonts/flexslider-icon.woff?f8b92f66539473eea649c8514eb836a0) format('woff'), url(/fonts/flexslider-icon.ttf?b4c9e5057989b9727a5df4e0a21af33c) format('truetype'), url(/fonts/flexslider-icon.svg?10e8a5455c4522c48aa975eacd4f0023#flexslider-icon) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -268,7 +268,7 @@ html[xmlns] .flexslider .slides {
 @font-face {
   font-family: 'FontAwesome';
   src: url(/fonts/fontawesome-webfont.eot?f7c2b4b747b1a225eb8dee034134a1b0);
-  src: url(/fonts/fontawesome-webfont.eot?f7c2b4b747b1a225eb8dee034134a1b0?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2?97493d3f11c0a3bd5cbd959f5d19b699) format('woff2'), url(/fonts/fontawesome-webfont.woff?d9ee23d59d0e0e727b51368b458a0bff) format('woff'), url(/fonts/fontawesome-webfont.ttf?706450d7bba6374ca02fe167d86685cb) format('truetype'), url(/fonts/fontawesome-webfont.svg?139e74e298bca37a25d2bd5868552e04#fontawesomeregular) format('svg');
+  src: url(/fonts/fontawesome-webfont.eot?f7c2b4b747b1a225eb8dee034134a1b0?#iefix&v=4.7.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2?97493d3f11c0a3bd5cbd959f5d19b699) format('woff2'), url(/fonts/fontawesome-webfont.woff?d9ee23d59d0e0e727b51368b458a0bff) format('woff'), url(/fonts/fontawesome-webfont.ttf?706450d7bba6374ca02fe167d86685cb) format('truetype'), url(/fonts/fontawesome-webfont.svg?2980083682e94d33a66eef2e7d612519#fontawesomeregular) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13757,6 +13757,12 @@ body {
   margin-bottom: 20px;
 }
 
+.center-heading .section-title .dif {
+  font-family: "Sriracha", cursive;
+  font-size: 2rem;
+  color: #FFA400;
+}
+
 .center-heading.colored .section-title {
   color: #ffffff;
 }
@@ -14143,6 +14149,7 @@ header
   }
 
   .header-area .main-nav .nav {
+    padding-bottom: 1.5rem;
     float: none;
     width: 100%;
     margin-top: 80px !important;
@@ -14155,10 +14162,13 @@ header
     border-top: 1px solid #eee;
   }
 
+  .header-area .main-nav .nav li:last-child {
+    border-bottom: 1px solid #eee;
+  }
+
   .header-area .main-nav .nav li {
     width: 100%;
     background: #fff;
-    border-bottom: 1px solid #eee;
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
@@ -14876,10 +14886,6 @@ blog
   -webkit-box-orient: vertical;
 }
 
-.blog-post-thumb .text {
-  text-align: justify;
-}
-
 .blog-post-thumb .blog-content {
   margin-top: -30px;
   padding-top: 50px;
@@ -14889,8 +14895,7 @@ blog
   font-weight: 400;
   font-size: 13px;
   color: #777;
-  letter-spacing: 0.26px;
-  line-height: 26px;
+  line-height: 1.5;
   margin-bottom: 15px;
 }
 
@@ -15135,5 +15140,104 @@ preloader
   100% {
     opacity: 0;
   }
+}
+
+.product__card {
+  border: none;
+  border-radius: 8px;
+}
+
+.product__card .card-header,
+.product__card .card-body {
+  border: none;
+  padding: 0;
+}
+
+.product__card .img {
+  border-radius: 8px;
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+.product__card .img .product__name {
+  position: relative;
+  color: #222222;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  margin: 0 1rem;
+  padding: 0.5rem 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .product__card .img .product__name {
+    padding: 1rem 1.2rem;
+  }
+}
+
+.product__card .img .product__name:before,
+.product__card .img .product__name:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 50%;
+}
+
+.product__card .img .product__name:before {
+  background-color: #FFA400;
+  top: 15px;
+  left: -1px;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .product__card .img .product__name:before {
+    left: 3px;
+  }
+}
+
+.product__card .img .product__name:after {
+  background-color: #222222;
+  top: 9px;
+  left: -5px;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .product__card .img .product__name:after {
+    left: 0;
+  }
+}
+
+.product__card .img img {
+  padding: 0 0.7rem;
+  width: 100%;
+}
+
+.product__info {
+  position: relative;
+  border-radius: 8px;
+  background: radial-gradient(white, #e8e7e7a6);
+}
+
+.product__info .btn-cart {
+  background: #862445;
+  border: none;
+  height: 40px;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  color: white;
+  opacity: 0.8;
+}
+
+.product__info .btn-cart svg {
+  margin-right: 0.8rem;
+}
+
+.product__info .btn-cart:hover {
+  opacity: 1;
 }
 

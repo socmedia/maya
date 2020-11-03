@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMail;
+use Illuminate\Http\Request;
 use App\Models\Model\BlogModel;
 use App\Models\Model\ProductModel;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ContactUsRequest;
 
 class LandingController extends Controller
 {
@@ -31,10 +34,37 @@ class LandingController extends Controller
         return view('landing.index', compact('products', 'blogs', 'populars'));
     }
 
+    public function article()
+    {
+        $blogs = $this->blog->getBlogs(10);
+        $populars = $this->blog->getPopulars(5);
+        return view('pages.article', compact('blogs', 'populars'));
+    }
+
     public function showArticle($slug)
     {
         $article = $this->blog->findBySlug($slug);
         $tags = $tags = explode(',', $article->tags);
-        return view('pages.article', compact('article', 'tags'));
+        $relates = $this->blog->findRelatedBlog($tags);
+        return view('pages.showArticle', compact('article', 'tags', 'relates'));
+    }
+
+    public function sendMail(ContactUsRequest $request)
+    {
+        if ($request->ajax()) {
+            Mail::to(env('MAIL_FROM_NAME', 'info@mayaspringbed.id'))
+                ->queue(new ContactUsMail(
+                    $request->name,
+                    $request->email,
+                    $request->subject,
+                    $request->message
+                ));
+        }
+
+        if (Mail::failures()) {
+            return response()->json(['message' => 'email couldn\'t be sent'], 422);
+        } else {
+            return response()->json(['message' => 'success'], 200);
+        }
     }
 }

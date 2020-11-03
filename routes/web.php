@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('index');
 
-Route::post('/hubungi-kami', function (ContactUsRequest $request) {
-    return Mail::to(env('MAIL_FROM_ADDRESS', 'info@mayaspringbed.id'))->queue(new ContactUsMail($request->all()));
-})->name('send.contactUs');
+Route::post('/hubungi-kami', [App\Http\Controllers\LandingController::class, 'sendMail'])->name('send.contactUs');
 
 Auth::routes(['verify' => true, 'register' => false]);
 
@@ -67,9 +65,6 @@ Route::group([
 });
 
 Route::group(['prefix' => 'artikel'], function () {
+    Route::get('/', [App\Http\Controllers\LandingController::class, 'article'])->name('articles');
     Route::get('/baca/{slug}', [App\Http\Controllers\LandingController::class, 'showArticle'])->name('showArticle');
-});
-
-Route::get('/test', function () {
-    return view('layouts.test');
 });

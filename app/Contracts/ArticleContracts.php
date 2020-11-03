@@ -8,14 +8,14 @@ trait ArticleContracts
 {
     public function getBlogs($total = 5)
     {
-        $article = Blog::where('published', 1)->orderBy('created_at', 'desc')->limit($total);
-        return $article->get([
+        $article = Blog::where('published', 1)->orderBy('created_at', 'desc')->select([
             'title',
             'slug_title',
             'subject',
             'viewed',
             'created_at'
         ]);
+        return $article->paginate($total);
     }
 
     public function getPopulars($total = 5)
@@ -33,7 +33,6 @@ trait ArticleContracts
     public function findRelatedBlog($tags)
     {
         $article = Blog::orderBy('viewed', 'desc')
-            ->with('categories:id,name')
             ->where('published', 1);
         foreach($tags as $tag){
             $article->orWhere('tags', 'LIKE', '%'.$tag.'%');

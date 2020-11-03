@@ -55,17 +55,6 @@
         })
     })
 
-    $(document).ready(function () {
-        setTimeout(() => {
-            $('iframe').last().remove()
-        }, 3000);
-
-        $('.page').click(function () {
-            $('.page').removeClass('active');
-            $(this).addClass('active');
-        })
-    })
-
     $('#modal-description').on('hidden.bs.modal', function (e) {
         $('[modal-body-loader]').show();
         $('[modal-body-real]').addClass('d-none');

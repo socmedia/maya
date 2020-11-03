@@ -1,40 +1,39 @@
 @extends('layouts/landing')
 
+@push('meta')
+<title>Maya Spring Bed | Good Sleep Good Day !</title>
+<meta name="keywords" content="Maya Spring Bed, Kasur, Kasur Murah Surakarta, Kasur Premium Surakarta">
+<meta name="description"
+    content="Dapatkan info berupa artikel seputar kasur di website resmi Maya Spring Bed. Tambah pengetahuan anda seputar kasur latex, matras, spring bed dan masih banyak yang lain">
+<meta property="og:title" content="Maya Spring Bed" />
+<meta property="og:url" content="https://https://mayaspringbed.id" />
+<meta property="og:type" content="website" />
+<meta property="og:description"
+    content="Dapatkan info berupa artikel seputar kasur di website resmi Maya Spring Bed. Tambah pengetahuan anda seputar kasur latex, matras, spring bed dan masih banyak yang lain">
+<meta property="og:image" content="https://mayaspringbed.id/img/logo.png">
+<meta property="twitter:title" content="Maya Spring Bed" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:description"
+    content="Dapatkan info berupa artikel seputar kasur di website resmi Maya Spring Bed. Tambah pengetahuan anda seputar kasur latex, matras, spring bed dan masih banyak yang lain">
+<meta property="twitter:image" content="https://mayaspringbed.id/img/logo.png">
+@endpush
+
 @section('content')
-<x-navbar />
-<div class="container mt-5 pt-5">
-    <div class="card-body p-2 p-lg-4">
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <h1 class="mb-4">{{$article->title}}</h1>
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        @foreach ($tags as $tag)
-                        <span class="badge badge-pill badge-secondary"># {{$tag}}</span>
-                        @endforeach
-                    </div>
-                    <div class="col-6">
-                        <small class="text-muted">
-                            <i class="fas fa-fw fa-eye"></i>
-                            Dibaca oleh, {{$article->viewed}} orang
-                        </small>
-                    </div>
-                    <div class="col-6 text-right">
-                        <small class="text-muted">
-                            Dipublish pada,
-                            <strong>{{$article->created_at->format('d M. Y h:i a')}}</strong>
-                        </small>
-                    </div>
-                </div>
-                <div class="py-4">
-                    {!!$article->description!!}
-                </div>
-            </div>
+<x-navbar-sub />
+
+<x-breadcrumb>
+    <a class="breadcrumb-item" href="{{route('index')}}">Beranda</a>
+    <span class="breadcrumb-item active">Artikel</span>
+</x-breadcrumb>
+
+<x-blog :blog="$blogs" :popular="$populars" />
+
+<div class="container">
+    <div class="row pb-5">
+        <div class="col-12 col-lg-8 d-flex justify-content-center">
+            {{$blogs->links()}}
         </div>
     </div>
 </div>
+
 @endsection
-
-
-@push('styles')
-@endpush

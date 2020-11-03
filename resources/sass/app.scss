@@ -1,10 +1,9 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import './styles';
+@import './src/flex-slider.css';
+@import './src/font-awesome.css';
+@import './variables';
+@import './src/style';

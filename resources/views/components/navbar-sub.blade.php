@@ -8,12 +8,12 @@
                     </a>
 
                     <ul class="nav">
-                        <li><a href="#welcome" class="active">Beranda</a></li>
-                        <li><a href="#features">Tentang Maya</a></li>
-                        <li><a href="#work-process">Pembuatan</a></li>
-                        <li><a href="#product">Produk</a></li>
-                        <li><a href="#blog">Artikel</a></li>
-                        <li><a href="#contact-us">Hubungi Kami</a></li>
+                        <li><a href="{{route('index')}}">Beranda</a></li>
+                        <li><a href="{{route('index')}}#about">Tentang Maya</a></li>
+                        <li><a href="{{route('index')}}#work-process">Pembuatan</a></li>
+                        <li><a href="{{route('index')}}#product">Produk</a></li>
+                        <li><a href="{{route('articles')}}">Artikel</a></li>
+                        <li><a href="{{route('index')}}#contact-us">Hubungi Kami</a></li>
                     </ul>
                     <a class="menu-trigger">
                         <span>Menu</span>

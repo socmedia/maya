@@ -195,7 +195,6 @@ body {
     background: #fff8f3;
 }
 
-
 .float-button {
     position: fixed;
     right: 20px;
@@ -453,7 +452,7 @@ button.main-button {
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 1rem;
     border-radius: 20px;
     padding: 12px 20px;
     background-color: $company-color-hovered;
@@ -1512,7 +1511,7 @@ contact
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin-bottom: 30px;
+    margin-bottom: .5rem;
 }
 
 .contact-form textarea {
@@ -1773,4 +1772,94 @@ preloader
         }
     }
 
+}
+
+#breadcrumb {
+    width: 100%;
+    padding: 10rem 0 2rem;
+    display: block;
+    background: linear-gradient(to left, #fdc830, #f37335);
+
+    .breadcrumb {
+        background: none;
+
+        .breadcrumb-item {
+            color: white;
+            opacity: .8;
+
+            &:before,
+            &:after {
+                color: white;
+            }
+
+            &:hover,
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.article-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+
+.pagination {
+    .page-item {
+
+        .page-link {
+            color: $dark;
+            border-color: #ffe6b7;
+
+            &:active,
+            &:hover,
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        &.active {
+            .page-link {
+                background-color: $company-color;
+                opacity: .8;
+                color: white;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+.form-control {
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: $company-color-hovered;
+        box-shadow: none;
+    }
+}
+
+
+.spinner-border {
+    width: 1rem;
+    height: 1rem;
+}
+
+.modal img {
+    width: 100%;
+    max-width: 400px;
+}
+
+.modal table {
+    width: 100% !important;
+}
+
+.modal table tr {
+    vertical-align: top !important
 }

@@ -1,3 +1,4 @@
+@if ($blog->total() !== 0)
 <section class="section" id="blog">
     <div class="container">
 
@@ -71,3 +72,4 @@
         </div>
     </div>
 </section>
+@endif

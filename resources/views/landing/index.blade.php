@@ -19,13 +19,11 @@
 
 @section('content')
 
-<x-navbar />
+<x-navbar :blog="$blogs" />
 
 <x-header />
 
 <x-about />
-
-<x-process />
 
 <x-product :products="$products" />
 

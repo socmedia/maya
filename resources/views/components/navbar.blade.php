@@ -10,9 +10,10 @@
                     <ul class="nav">
                         <li><a href="#welcome" class="active">Beranda</a></li>
                         <li><a href="#features">Tentang Maya</a></li>
-                        <li><a href="#work-process">Pembuatan</a></li>
                         <li><a href="#product">Produk</a></li>
+                        @if ($blog->total() !== 0)
                         <li><a href="#blog">Artikel</a></li>
+                        @endif
                         <li><a href="#contact-us">Hubungi Kami</a></li>
                     </ul>
                     <a class="menu-trigger">

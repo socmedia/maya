@@ -28,6 +28,18 @@
 
 <x-blog :blog="$blogs" :popular="$populars" />
 
+@if ($blogs->total() === 0)
+<section class="py-5">
+    <div class="container py-5 my-5">
+        <div class="row py-5">
+            <div class="col-12 py-5">
+                <h2 class="text-center">Maaf Artikel belum tersedia untuk saat ini</h2>
+            </div>
+        </div>
+    </div>
+</section>
+@endif
+
 <div class="container">
     <div class="row pb-5">
         <div class="col-12 col-lg-8 d-flex justify-content-center">

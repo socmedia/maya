@@ -8,6 +8,7 @@ use App\Models\Model\BlogModel;
 use App\Models\Model\ProductModel;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactUsRequest;
+use App\View\Components\about;
 
 class LandingController extends Controller
 {
@@ -44,9 +45,12 @@ class LandingController extends Controller
     public function showArticle($slug)
     {
         $article = $this->blog->findBySlug($slug);
-        $tags = $tags = explode(',', $article->tags);
-        $relates = $this->blog->findRelatedBlog($tags);
-        return view('pages.showArticle', compact('article', 'tags', 'relates'));
+        if($article){
+            $tags = $tags = explode(',', $article->tags);
+            $relates = $this->blog->findRelatedBlog($tags);
+            return view('pages.showArticle', compact('article', 'tags', 'relates'));
+        }
+        return abort(404);
     }
 
     public function sendMail(ContactUsRequest $request)

@@ -66,5 +66,5 @@ Route::group([
 
 Route::group(['prefix' => 'artikel'], function () {
     Route::get('/', [App\Http\Controllers\LandingController::class, 'article'])->name('articles');
-    Route::get('/baca/{slug}', [App\Http\Controllers\LandingController::class, 'showArticle'])->name('showArticle');
+    Route::get('/baca/{slug}', [App\Http\Controllers\LandingController::class, 'showArticle'])->middleware('countView')->name('showArticle');
 });

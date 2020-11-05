@@ -10,7 +10,6 @@
                     <ul class="nav">
                         <li><a href="{{route('index')}}">Beranda</a></li>
                         <li><a href="{{route('index')}}#about">Tentang Maya</a></li>
-                        <li><a href="{{route('index')}}#work-process">Pembuatan</a></li>
                         <li><a href="{{route('index')}}#product">Produk</a></li>
                         <li><a href="{{route('articles')}}">Artikel</a></li>
                         <li><a href="{{route('index')}}#contact-us">Hubungi Kami</a></li>
